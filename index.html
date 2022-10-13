@@ -1,15 +1,107 @@
 <!DOCTYPE html>
-<html lang="e">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="image/png" sizes="16x16" rel="icon" href="./images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a580e62678.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./styles/app.css" />
+
+    <title>The Screen</title>
 </head>
+
 <body>
-    <h1>Movies</h1>
-    <script src="./src/secrets.js"></script>  
-    <script src="./src/main.js"></script>   
+    <!-- ========================== HEADER ========================== -->
+    <header id="header" class="header-container">
+        <div class="header-image-container">
+            <div class="header-title--principal">
+                <span class="header-arrow">&lt;</span>
+                <h1 class="header-title"><img src="./images/logo.png"></h1>
+                <h1 class="header-title header-title--categoryView">Action</h1>
+                <form id="searchForm" class="header-searchForm">
+                    <input type="text" placeholder="Search for a movie, tv show, person......"" />
+                <button id=" searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- ========================== TRENDING ========================== -->
+
+    <section id="trendingPreview" class="trendingPreview-container">
+        <div class="trendingPreview-header">
+            <h2 class="trendingPreview-title">Trending <i class="fa-solid fa-fire fa-fade"> </i></h2>
+            <button class="trendingPreview-btn">See More</button>
+        </div>
+
+        <article class="trendingPreview-movieList">
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                    alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/q6ydU8r1iYyy2bV7tPVaq266Y1k.jpg
+                " class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="	https://www.themoviedb.org/t/p/w300_and_h450_bestv2/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/f2PVrphK0u81ES256lw3oAZuF3x.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="	https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+            <div class="movie-container">
+                <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg"
+                    class="movie-img" alt="Nombre de la película" />
+            </div>
+        </article>
+    </section>
+
+    <!-- ========================== FOOTER ========================== -->
+    <footer>With 💚​ @ejmunoz216
+        <a href='https://github.com/Ejmz216'><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href='https://github.com/Ejmz216'><i class="fa-brands fa-github"></i></a>
+    </footer>
+
+    <!-- ========================== SCRIPTS ========================== -->
+    <script src="./src/secrets.js"></script>
+    <script src="./src/main.js"></script>
+
 </body>
+
 </html>
