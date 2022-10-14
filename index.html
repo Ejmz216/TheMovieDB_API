@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <!-- ========================== HEADER ========================== -->
+    <!-- ========================== HEADER ============================ -->
     <header id="header" class="header-container">
         <div class="header-image-container">
             <div class="header-title--principal">
@@ -40,7 +40,7 @@
     <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
             <h2 class="trendingPreview-title">Trending <i class="fa-solid fa-fire fa-fade"> </i></h2>
-            <button class="trendingPreview-btn">See More</button>
+            <button class="trendingPreview-btn">See More <i class="fa-solid fa-circle-info"></i></button>
         </div>
 
         <article class="trendingPreview-movieList">
@@ -92,13 +92,100 @@
         </article>
     </section>
 
-    <!-- ========================== FOOTER ========================== -->
+    <!-- ========================== CATEGORIES ========================= -->
+    <section id="categoriesPreview" class="categoriesPreview-container">
+        <h2 class="categoriesPreview-title">Categorías</h2>
+
+        <article class="categoriesPreview-list">
+            <div class="category-container">
+                <h3 id="id28" class="category-title">Romance</h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id16" class="category-title">Drama</h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id14" class="category-title">Acción</h3>
+            </div>
+        </article>
+    </section>
+
+    <!-- ========================= GENERIC LIST ======================== -->
+    <section id="genericList" class="genericList-container ">
+        <div class="movie-container">
+            <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                alt="Nombre de la película" />
+        </div>
+
+        <div class="movie-container">
+            <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
+                class="movie-img" alt="Nombre de la película" />
+        </div>
+
+        <div class="movie-container">
+            <img src="	https://www.themoviedb.org/t/p/w300_and_h450_bestv2/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg"
+                class="movie-img" alt="Nombre de la película" />
+        </div>
+    </section>
+    <!-- ======================== MOVIE DETAILS ======================== -->
+    <section id="movieDetail" class="movieDetail-container inactive">
+        <h1 class="movieDetail-title">Star Wars</h1>
+        <span class="movieDetail-score">8.2</span>
+        <p style="text-align: justify;" class="movieDetail-description">
+            Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the
+            galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable
+            robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.
+        </p>
+
+        <article class="categories-list">
+            <div class="category-container">
+                <h3 id="id28" class="category-title">Romance </h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id16" class="category-title">Drama</h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id14" class="category-title">Acción</h3>
+            </div>
+        </article>
+
+        <article class="relatedMovies-container">
+            <h2 class="relatedMovies-title">Related</h2>
+
+            <div class="relatedMovies-scrollContainer">
+                <div class="movie-container">
+                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg"
+                        class="movie-img" alt="Nombre de la película" />
+                </div>
+
+                <div class="movie-container">
+                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg"
+                        class="movie-img" alt="Nombre de la película" />
+                </div>
+
+                <div class="movie-container">
+                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg"
+                        class="movie-img" alt="Nombre de la película" />
+                </div>
+
+                <div class="movie-container">
+                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/q6ydU8r1iYyy2bV7tPVaq266Y1k.jpg
+                    " class="movie-img" alt="Nombre de la película" />
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- ========================== FOOTER ============================ -->
     <footer>With 💚​ @ejmunoz216
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-linkedin-in"></i></a>
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-github"></i></a>
     </footer>
 
-    <!-- ========================== SCRIPTS ========================== -->
+    <!-- ========================== SCRIPTS =========================== -->
     <script src="./src/secrets.js"></script>
     <script src="./src/main.js"></script>
 
