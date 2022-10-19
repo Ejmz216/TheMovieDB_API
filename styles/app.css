@@ -18,7 +18,7 @@
     --teal-medium-3: #4D77FF;
     --teal-medium-2: #3BACB6;
     --teal-medium-1: #82DBD8;
-    
+
 
     --font-family-titles: 'DM Sans', sans-serif;
     --font-family-text: 'DM Sans', sans-serif;
@@ -101,22 +101,31 @@ button {
 
 /* ======================= HEADER ======================= */
 .header-container {
-    height: 25%;
+    min-height: 600px;
     width: 100%;
+
 
 }
 
 .header-image-container {
-    background-image: url(/images/fondo.jpg);
-    /* background-image: url("https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg");*/
-    min-height: 600px;
-    object-fit: contain;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    /* background-image: url(/images/fondo.jpg); */
+    height: 600px;
     width: 100%;
     position: relative;
 }
+
+/* background-image: url("https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg");*/
+
+.poster-img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%
+}
+
+
+
 
 .header-title--principal {
     background-color: rgba(0, 0, 0, 0.6);
@@ -160,7 +169,6 @@ button {
     align-items: center;
     justify-content: center;
     width: 100%;
-    flex-wrap: nowrap;
     border: 1px solid var(--gray-light-1);
     border-radius: 5px;
 
@@ -227,13 +235,15 @@ button {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 300px;
+    height: 350px;
     padding: 24px;
 }
 
 .trendingPreview-movieList .movie-container {
     display: inline-block;
-    margin-right: 20px;
+    margin: 20px;
+    text-align: center;
+
 }
 
 .trendingPreview-movieList .movie-container .movie-img {
@@ -243,6 +253,16 @@ button {
     width: 500px;
     min-width: 150px;
     max-width: 150px;
+}
+
+.movie-titlePreview {
+    color: var(--teal-dark-1);
+    overflow: hidden;
+    white-space: normal;
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 200px;
+    height: 40px;
 }
 
 
@@ -289,7 +309,7 @@ footer {
     height: 8px;
 }
 
-category-container{
+category-container {
     width: 45%;
 }
 
@@ -446,7 +466,7 @@ category-container{
     padding-bottom: 16px;
 }
 
-.relatedMovies-scrollContainer .movie-container {
+.relatedMovies-scrollContainer {
     display: inline-block;
     margin-right: 8px;
 }
