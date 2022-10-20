@@ -20,27 +20,36 @@
 
 <body>
     <!-- ========================== HEADER ============================ -->
+    <!--     <ul>
+        <li><img src="./images/logoWS.png"></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul> -->
+
     <header id="header" class="header-container">
         <div class="header-image-container">
-<!--             <img class="poster-img" src="https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" /> --> 
+            <!--             <img class="poster-img" src="https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" /> -->
             <div class="header-title--principal">
-                <span class="header-arrow">&lt;</span>
-                <h1 class="header-title"><img src="./images/logo.png"></h1>
-                <h1 class="header-title header-title--categoryView">Action</h1>
+                <span class="header-arrow inactive">&lt;</span>
+                <h1 class="header-title inactive"><img src="./images/logo.png"></h1>
+                <h1 class="header-title header-title--categoryView inactive">Thriller</h1>
                 <form id="searchForm" class="header-searchForm">
                     <input type="text" placeholder="Search for a movie, tv show, person......"" />
-                <button id=" searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                 </form>
             </div>
         </div>
 
     </header>
 
+
     <!-- ========================== TRENDING ========================== -->
 
     <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
-            <h2 class="trendingPreview-title">Trending <i class="fa-solid fa-fire fa-fade"> </i></h2>
+            <h2 class="trendingPreview-title">Trending <i id="fire" class="fa-solid fa-fire fa-fade"> </i></h2>
             <button class="trendingPreview-btn">See More <i class="fa-solid fa-circle-info"></i></button>
         </div>
 
@@ -51,7 +60,7 @@
 
     <!-- ========================== CATEGORIES ========================= -->
     <section id="categoriesPreview" class="categoriesPreview-container">
-        <h2 class="categoriesPreview-title">Categories</h2>
+        <h2 class="categoriesPreview-title">Categories <i id="movieIcon" class="fa-solid fa-film"></i></h2>
 
         <article class="categoriesPreview-list">
 
@@ -77,10 +86,10 @@
     </section>
 
     <!-- ======================== MOVIE DETAILS ======================== -->
-    <section id="movieDetail" class="movieDetail-container inactive">
+    <section id="movieDetail" class="movieDetail-container">
         <h1 class="movieDetail-title">Star Wars</h1>
         <span class="movieDetail-score">8.2</span>
-        <p style="text-align: justify;" class="movieDetail-description">
+        <p class="movieDetail-description">
             Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the
             galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable
             robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.
@@ -135,9 +144,11 @@
 
     <!-- ========================== SCRIPTS =========================== -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./src/navigation.js"></script> 
+
     <script src="./src/secrets.js"></script>
+    <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/navigation.js"></script>
 
 </body>
 

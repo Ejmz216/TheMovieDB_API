@@ -10,23 +10,19 @@ const api = axios.create({
 async function getPosterImg() {
     const { data } = await api('collection/9735/images');
     const collections = data.backdrops;
-    console.log(collections)
+    const posterImage = document.createElement('img');
+    posterImage.classList.add('poster-img');
+    posterImage.setAttribute('src', 'https://image.tmdb.org/t/p/original' + collections[4].file_path);
 
-        const headerImageContainer = document.querySelector('#header .header-image-container');
-        const headertitleP = document.querySelector('#header .header-title--principal');
-        const posterImage = document.createElement('img');
-        posterImage.classList.add('poster-img');
-        posterImage.setAttribute('src', 'https://image.tmdb.org/t/p/original' + collections[4].file_path);        
-
-        headerImageContainer.insertBefore(posterImage, headertitleP);
+    headerImageContainer.insertBefore(posterImage, headertitleP);
 }
 
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day');
     const movies = data.results;
 
+    trendingPreviewMoviesContainer.innerHTML = "";
     movies.forEach((movie) => {
-        const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList');
 
         const movieContainer = document.createElement('div');
         movieContainer.classList.add('movie-container');
@@ -50,8 +46,10 @@ async function getTrendingMoviesPreview() {
 async function getCategoriesPreview() {
     const { data } = await api('genre/movie/list');
     const categories = data.genres;
+
+    categoriesPreviewContainer.innerHTML = "";
+
     categories.forEach((category) => {
-        const categoriesPreviewContainer = document.querySelector('#categoriesPreview .categoriesPreview-list');
 
         const categoryContainer = document.createElement('div');
         categoryContainer.classList.add('category-container');
