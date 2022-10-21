@@ -5,99 +5,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link type="image/png" sizes="16x16" rel="icon" href="./images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;1000&family=Raleway&family=Roboto+Flex:opsz@8..144&display=swap"
         rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a580e62678.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="./styles/app.css" />
-
+    <script src="https://kit.fontawesome.com/a580e62678.js" crossorigin="anonymous"></script>
     <title>The Screen</title>
 </head>
 
 <body>
     <!-- ========================== HEADER ============================ -->
-    <!--     <ul>
-        <li><img src="./images/logoWS.png"></li>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-    </ul> -->
-
     <header id="header" class="header-container">
-        <div class="header-image-container">
-            <!--             <img class="poster-img" src="https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg" /> -->
-            <div class="header-title--principal">
-                <span class="header-arrow inactive">&lt;</span>
-                <h1 class="header-title inactive"><img src="./images/logo.png"></h1>
-                <h1 class="header-title header-title--categoryView inactive">Thriller</h1>
-                <form id="searchForm" class="header-searchForm">
-                    <input type="text" placeholder="Search for a movie, tv show, person......"" />
-                <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-                </form>
-            </div>
+        <span class="header-arrow inactive"><i class="fa-solid fa-arrow-left"></i></i></span>
+
+        <div class="imageContainer">
+            <div class="darktheme"></div>
+            <h1 class="header-title"><i style="color:#32E0C4" class="fa-solid fa-jedi"></i> The screen</h1>
+            <h2 class="header-subtitle">Weaving stories</h2>
         </div>
+        <h1 class="header-title header-title--categoryView inactive">Action</h1>
 
+        <form id="searchForm" class="header-searchForm">
+            <input type="text" placeholder="Search for a movie..." />
+            <button id="searchBtn">🔍</button>
+        </form>
     </header>
-
-
     <!-- ========================== TRENDING ========================== -->
-
     <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
-            <h2 class="trendingPreview-title">Trending <i id="fire" class="fa-solid fa-fire fa-fade"> </i></h2>
-            <button class="trendingPreview-btn">See More <i class="fa-solid fa-circle-info"></i></button>
+            <h2 class="trendingPreview-title">Trending Movies <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
+            <button class="trendingPreview-btn">Ver más <i class="fa-solid fa-circle-info"></i></button>
         </div>
 
         <article class="trendingPreview-movieList">
 
         </article>
     </section>
-
     <!-- ========================== CATEGORIES ========================= -->
     <section id="categoriesPreview" class="categoriesPreview-container">
-        <h2 class="categoriesPreview-title">Categories <i id="movieIcon" class="fa-solid fa-film"></i></h2>
+        <h2 class="categoriesPreview-title">Movie Categories <i id="movieIcon" class="fa-solid fa-film"></i></h2>
 
         <article class="categoriesPreview-list">
-
+            <!-- <div class="category-container">
+        <h3 id="id28" class="category-title">Romance</h3>
+      </div> -->
         </article>
     </section>
-
     <!-- ========================= GENERIC LIST ======================== -->
-    <section id="genericList" class="genericList-container">
+    <section id="genericList" class="genericList-container inactive">
         <div class="movie-container">
             <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
                 alt="Nombre de la película" />
         </div>
 
         <div class="movie-container">
-            <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg"
-                class="movie-img" alt="Nombre de la película" />
+            <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                alt="Nombre de la película" />
         </div>
 
         <div class="movie-container">
-            <img src="	https://www.themoviedb.org/t/p/w300_and_h450_bestv2/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg"
-                class="movie-img" alt="Nombre de la película" />
+            <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                alt="Nombre de la película" />
         </div>
     </section>
-
     <!-- ======================== MOVIE DETAILS ======================== -->
-    <section id="movieDetail" class="movieDetail-container">
-        <h1 class="movieDetail-title">Star Wars</h1>
-        <span class="movieDetail-score">8.2</span>
+    <section id="movieDetail" class="movieDetail-container inactive">
+        <h1 class="movieDetail-title">Deadpool</h1>
+        <span class="movieDetail-score">7.6</span>
         <p class="movieDetail-description">
-            Princess Leia is captured and held hostage by the evil Imperial forces in their effort to take over the
-            galactic Empire. Venturesome Luke Skywalker and dashing captain Han Solo team together with the loveable
-            robot duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and justice in the Empire.
+            Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
         </p>
 
         <article class="categories-list">
             <div class="category-container">
-                <h3 id="id28" class="category-title">Romance </h3>
+                <h3 id="id28" class="category-title">Romance</h3>
             </div>
 
             <div class="category-container">
@@ -110,46 +94,37 @@
         </article>
 
         <article class="relatedMovies-container">
-            <h2 class="relatedMovies-title">Related</h2>
+            <h2 class="relatedMovies-title">Películas similares</h2>
 
             <div class="relatedMovies-scrollContainer">
                 <div class="movie-container">
-                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg"
-                        class="movie-img" alt="Nombre de la película" />
+                    <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                        alt="Nombre de la película" />
                 </div>
 
                 <div class="movie-container">
-                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/2l05cFWJacyIsTpsqSgH0wQXe4V.jpg"
-                        class="movie-img" alt="Nombre de la película" />
+                    <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                        alt="Nombre de la película" />
                 </div>
 
                 <div class="movie-container">
-                    <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/xfSAoBEm9MNBjmlNcDYLvLSMlnq.jpg"
-                        class="movie-img" alt="Nombre de la película" />
-                </div>
-
-                <div class="movie-container">
-                    <img src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/q6ydU8r1iYyy2bV7tPVaq266Y1k.jpg
-                    " class="movie-img" alt="Nombre de la película" />
+                    <img src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg" class="movie-img"
+                        alt="Nombre de la película" />
                 </div>
             </div>
         </article>
     </section>
-
     <!-- ========================== FOOTER ============================ -->
     <footer>With 💚​ @ejmunoz216
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-linkedin-in"></i></a>
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-github"></i></a>
     </footer>
-
     <!-- ========================== SCRIPTS =========================== -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
     <script src="./src/secrets.js"></script>
     <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
     <script src="./src/navigation.js"></script>
-
 </body>
 
 </html>

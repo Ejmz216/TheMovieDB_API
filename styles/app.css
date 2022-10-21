@@ -1,45 +1,54 @@
-/* * General */
+/* General */
 * {
     box-sizing: border-box;
 }
 
 :root {
-    --gray-light-1: #EEEEEE;
-    --teal-light-1: #32E0C4;
-    --teal-dark-1: #0D7377;
-    --light-black1: #212121;
+    --purple-light-1: #FBFAFB;
+    --purple-light-2: #EEEAF2;
+    --purple-medium-1: #AA83C8;
+    --purple-medium-2: #8B48BF;
+    --purple-medium-3: #5C218A;
+    --purple-dark-1: #3E0F64;
+    --purple-dark-2: #2A0646;
 
-    --yellow: #FEDB39;
-    --green: #00C897;
-    --aqua: #00FFDD;
-    --lightBlue: #56BBF1;
-    --darkBlue: #293462;
-    --red: #D61C4E;
-    --teal-medium-3: #4D77FF;
-    --teal-medium-2: #3BACB6;
-    --teal-medium-1: #82DBD8;
+    --yellow: #EECC75;
+    --green: #CAD297;
+    --aqua: #B7EAC5;
+    --lightBlue: #A2EEE5;
+    --darkBlue: #8EA2EA;
+    --red: #F09D9D;
 
-
-    --font-family-titles: 'DM Sans', sans-serif;
-    --font-family-text: 'DM Sans', sans-serif;
-    --font-weight-title1: 400;
+    --font-family-titles: 'Roboto Flex', sans-serif;
+    --font-family-text: 'Raleway', sans-serif;
+    --font-weight-title1: 800;
     --font-weight-title2: 700;
     --font-weight-text1: 400;
     --font-weight-text2: 500;
 }
 
 html {
-    background-color: var(--light-black1);
+    background-color: var(--purple-medium-3);
 }
 
 body {
-    background-color: var(--gray-light-1);
-    color: var(--light-black1);
+    background-color: var(--purple-light-1);
+    color: var(--purple-dark-2);
     font-family: var(--font-family-text);
     font-weight: var(--font-weight-text1);
     font-size: 16px;
-    margin: 0 0 0 0;
+    margin: 4px 0 0 0;
     padding: 0;
+}
+
+#fire {
+    color: var(--red);
+    text-shadow: 2px 2px 5px var(--yellow);
+}
+
+#movieIcon {
+    color: var(--darkBlue);
+    text-shadow: 2px 2px 5px var(--light-black1);
 }
 
 h1,
@@ -49,10 +58,32 @@ h3 {
     padding: 0;
 }
 
+.imageContainer h1 {
+    left: 50px;
+    position: absolute;
+    font-size: 90px;
+    color: white;
+    font-family: var(--font-family-titles);
+    font-weight: var(--font-weight-title1);
+    margin: 0;
+    padding: 0;
+}
+
+.imageContainer h2 {
+    left: 150px;
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    font-family: var(--font-family-titles);
+    font-weight: var(--font-weight-title1);
+    margin-top: 150px;
+    padding: 0;
+}
+
 h1,
 h2 {
-    font-size: 50px;
-    color: var(--gray-light-1);
+    font-size: 35px;
+    color: var(--purple-dark-2);
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title1);
     margin: 0;
@@ -60,63 +91,104 @@ h2 {
 }
 
 h2 {
-    font-size: 25px;
-    color: var(--light-black1);
+    font-size: 30px;
+    color: var(--purple-dark-1);
+    font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title2);
 }
 
-#fire{
-    color: var(--red);
-    text-shadow: 2px 2px 5px var(--yellow);
-}
-#movieIcon{
-    color: var(--darkBlue);
-    text-shadow: 2px 2px 5px var(--light-black1);
-}
-
 h3 {
-    color: var(--light-black1);
+    color: var(--purple-dark-2);
     font-weight: var(--font-weight-text2);
     font-size: 16px;
 }
 
 input {
-    background-color: transparent;
-    color: var(--teal-medium-2);
+    background-color: var(--purple-light-2);
+    color: var(--purple-medium-2);
     border: none;
     font-size: 18px;
     padding-left: 16px;
 }
 
 input::placeholder {
-    color: var(--teal-medium-1);
+    color: var(--purple-medium-1);
     font-family: var(--font-family-text);
 }
 
 button {
-    background-color: var(--teal-dark-1);
+    background-color: var(--purple-dark-1);
     border: none;
-    color: var(--gray-light-1);
+    color: var(--purple-light-2);
     font-weight: var(--font-weight-text2);
     font-size: 14px;
     cursor: pointer;
-
 }
 
-/* ======================= HEADER ======================= */
-.header-container {
-    min-height: 600px;
-    width: 100%;
+
+/*============================ SHARED ================================*/
+/* .header-container, .trendingPreview-header, .categoriesPreview-container {
+    padding: 0 24px;
+  } */
+
+.trendingPreview-container,
+.categoriesPreview-container,
+footer {
+    margin-top: 30px;
 }
 
-.header-image-container {
-    /* background-image: url(/images/fondo.jpg); */
+.trendingPreview-header,
+.categoriesPreview-title {
+    margin-bottom: 24px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.movie-container {
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--purple-dark-1);
+    font-family: var(--font-family-titles);
+    font-weight: var(--font-weight-title2);
+}
+
+.movie-img {
+    border-radius: 8px;
+}
+
+.categoriesPreview-list,
+.categories-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+
+/*============================== HEADER ================================*/
+/* .header-container {
+    padding-: 40px;
+  } */
+
+.imageContainer {
+    /*  background-image: url("https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg"); */
+    display: flex;
+    justify-content: left;
     height: 600px;
     width: 100%;
     position: relative;
+    align-items: center;
 }
 
-/* background-image: url("https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg");*/
+.darktheme {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
 .poster-img {
     position: absolute;
     object-fit: cover;
@@ -124,22 +196,24 @@ button {
     height: 100%
 }
 
-.header-title--principal {
-    background-color: rgba(0, 0, 0, 0.6);
-    /* background-color: rgba(13, 115, 119, 0.8); */
-    color: white;
+.header-container--long {
+    background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
+    background-size: cover !important;
+    height: 800px;
     position: absolute;
+    top: 0;
     width: 100%;
-    height: 100%;
-    padding: 10px;
-    text-align: left;
-    justify-content: left;
-    align-items: center;
+    object-fit: cover;
 }
 
-.header-title img {
-    margin-top: 40px;
-    margin-bottom: 40px;
+.header-container--categoryView {
+    background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
+}
+
+.header-title {
+    margin-bottom: 16px;
+    margin-left: 20px;
 }
 
 .header-arrow {
@@ -150,133 +224,81 @@ button {
     display: inline-block;
 }
 
-.header-arrow--whFite {
+.header-arrow--white {
+    margin: 20px;
     color: var(--purple-light-1);
 }
 
-/* ====================== MENU BAR ====================== */
-/* 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    overflow: hidden;
-    background-color: var(--teal-medium-2);
-    font-family: var(--font-family-text);
-    font-weight: var(--font-weight-text1);
+.header-arrow--white:hover {
+    color: var(--purple-medium-3);
+    text-shadow: 2px 2px 5px var(--yellow);
 }
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-
-} */
 
 /* ======================= SEARCH ======================= */
-
-.header-container--categoryView {
-    background: linear-gradient(180deg, rgba(238, 204, 117, 0.5) 0%, rgba(238, 204, 117, 0) 72.92%);
-
-}
-
 .header-searchForm {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
     width: 100%;
-    border: 1px solid var(--gray-light-1);
-    border-radius: 5px;
+    flex-wrap: nowrap;
 
+    border-style: dotted;
+    border-width: 2px;
+    border-color: #DDDDDD;
 }
 
 .header-searchForm input {
     height: 48px;
-    width: 100%;
-    opacity: 0.7;
+    width: 90%;
 
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .header-searchForm button {
-    background-color: var(--teal-dark-1);
-    /* For browsers that do not support gradients */
-    background-image: linear-gradient(var(--teal-light-1), var(--teal-dark-1));
-    font-family: var(--font-family-text);
-    font-weight: var(--font-weight-title1);
-    color: var(--gray-light-1);
-    width: 100px;
+    width: 56px;
     height: 48px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
-.header-searchForm button:hover {
-    color: var(--teal-dark-1);
-}
 
 /* ======================= TRENDING ======================= */
-.trendingPreview-container {
-    margin-top: 8px;
-}
-
-.trendingPreview-header {
-    margin: 30px 0px 0px 0px;
-    padding: 15px 15px 0px 30px;
-}
-
-.movie-img {
-    border-radius: 8px;
-}
-
-
 .trendingPreview-header {
     display: flex;
+    padding-bottom: 16px;
     align-items: center;
     justify-content: space-between;
 }
 
 .trendingPreview-btn {
-    background-image: linear-gradient(var(--teal-light-1), var(--teal-dark-1));
     border-radius: 8px;
-    height: 20%;
-    width: 15%;
-    padding: 10px;
-
+    height: 32px;
+    width: 72px;
 }
-
-.trendingPreview-btn:hover {
-    color: var(--darkBlue);
-}
-
 
 .trendingPreview-movieList {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 350px;
-    padding: 24px;
+    height: 280px;
+    padding-left: 24px;
+    padding-bottom: 16px;
 }
 
 .trendingPreview-movieList .movie-container {
     display: inline-block;
-    margin: 20px;
+    margin-right: 15px;
     text-align: center;
-
 }
 
 .trendingPreview-movieList .movie-container .movie-img {
-    height: 500px;
+    height: 225px;
     min-height: 225px;
     max-height: 225px;
-    width: 500px;
+    width: 150px;
     min-width: 150px;
     max-width: 150px;
 }
@@ -291,29 +313,9 @@ li a:hover {
     height: 40px;
 }
 
-
 /* ======================= CATEGORIES ======================= */
-.categoriesPreview-container {
-    padding: 0 24px;
-}
-
-.categoriesPreview-container,
-footer {
-    margin-top: 48px;
-}
-
-.categoriesPreview-title {
-    margin-bottom: 24px;
-}
-
-.categoriesPreview-list {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 20px;
+.category-container {
+    height: 100%;
 }
 
 .category-title {
@@ -324,6 +326,18 @@ footer {
     text-overflow: ellipsis;
 }
 
+.categoriesPreview-list {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+
+
 .category-title::before {
     content: '••••';
     color: transparent;
@@ -333,10 +347,6 @@ footer {
     margin-right: 8px;
     width: 8px;
     height: 8px;
-}
-
-category-container {
-    width: 45%;
 }
 
 #id28 {
@@ -360,11 +370,11 @@ category-container {
 }
 
 #id99 {
-    --idColor: var(--teal-medium-3);
+    --idColor: var(--purple-dark-1);
 }
 
 #id18 {
-    --idColor: var(--teal-medium-1);
+    --idColor: var(--purple-medium-1);
 }
 
 #id10751 {
@@ -388,11 +398,11 @@ category-container {
 }
 
 #id9648 {
-    --idColor: var(--teal-medium-2);
+    --idColor: var(--purple-dark-1);
 }
 
 #id10749 {
-    --idColor: var(--teal-dark-1);
+    --idColor: var(--purple-medium-1);
 }
 
 #id878 {
@@ -415,21 +425,19 @@ category-container {
     --idColor: var(--darkBlue);
 }
 
-/* ======================= GENERIC LIST ======================= */
 
+/* Generic List (search, trending & category) */
 .genericList-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 32px 24px;
-    gap: 10px;
 }
 
 .genericList-container .movie-container {
     display: inline-block;
-    width: 47.5%;
-    margin-bottom: 50px;
+    width: 17.5%;
 }
 
 .genericList-container .movie-img {
@@ -437,15 +445,17 @@ category-container {
 }
 
 
-/* ======================= DETAIL ======================= */
+/* Movie Detail */
 .movieDetail-container {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     padding: 32px 24px;
-    margin-top: 403px;
+    margin-top: 600px;
+    height: 550px;
+    width: 100%;
     z-index: 1;
     position: absolute;
-    background-color: var(--teal-dark-1);
+    background-color: var(--purple-light-1);
 }
 
 .movieDetail-title {
@@ -481,7 +491,6 @@ category-container {
 
 .relatedMovies-title {
     margin-bottom: 16px;
-    color: var(--gray-light-1);
 }
 
 .relatedMovies-scrollContainer {
@@ -525,9 +534,6 @@ footer {
     height: 50px;
 }
 
-footer a:visited {
-    color: var(--gray-light-1);
-}
 
 /* ======================= EXTRAS ======================= */
 .inactive {
