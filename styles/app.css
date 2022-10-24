@@ -4,20 +4,20 @@
 }
 
 :root {
-    --purple-light-1: #FBFAFB;
-    --purple-light-2: #EEEAF2;
-    --purple-medium-1: #AA83C8;
-    --purple-medium-2: #8B48BF;
-    --purple-medium-3: #5C218A;
-    --purple-dark-1: #3E0F64;
-    --purple-dark-2: #2A0646;
+    --light-1: white;
+    --light-2: #F4F6FF;
+    --teal-medium-1: #0D7377;
+    --teal-medium-2: #32E0C4;
+    --teal-medium-3: #00C897;
+    --teal-dark-1: #019267;
+    --teal-dark-2: #4F8A8B;
 
-    --yellow: #EECC75;
-    --green: #CAD297;
-    --aqua: #B7EAC5;
-    --lightBlue: #A2EEE5;
-    --darkBlue: #8EA2EA;
-    --red: #F09D9D;
+    --yellow: #FEB139;
+    --purple: #3F0071;
+    --aqua: #1CD6CE;
+    --lightBlue: #4D96FF;
+    --darkBlue: #187498;
+    --red: #EB5353;
 
     --font-family-titles: 'Roboto Flex', sans-serif;
     --font-family-text: 'Raleway', sans-serif;
@@ -28,12 +28,12 @@
 }
 
 html {
-    background-color: var(--purple-medium-3);
+    background-color: var(--teal-medium-3);
 }
 
 body {
-    background-color: var(--purple-light-1);
-    color: var(--purple-dark-2);
+    background-color: var(--light-1);
+    color: var(--teal-dark-2);
     font-family: var(--font-family-text);
     font-weight: var(--font-weight-text1);
     font-size: 16px;
@@ -83,7 +83,7 @@ h3 {
 h1,
 h2 {
     font-size: 35px;
-    color: var(--purple-dark-2);
+    color: var(--teal-dark-2);
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title1);
     margin: 0;
@@ -92,34 +92,34 @@ h2 {
 
 h2 {
     font-size: 30px;
-    color: var(--purple-dark-1);
+    color: var(--teal-medium-1);
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title2);
 }
 
 h3 {
-    color: var(--purple-dark-2);
+    color: var(--teal-dark-2);
     font-weight: var(--font-weight-text2);
     font-size: 16px;
 }
 
 input {
-    background-color: var(--purple-light-2);
-    color: var(--purple-medium-2);
+    background-color: var(--light-2);
+    color: var(--teal-medium-2);
     border: none;
     font-size: 18px;
     padding-left: 16px;
 }
 
 input::placeholder {
-    color: var(--purple-medium-1);
+    color: var(--teal-medium-1);
     font-family: var(--font-family-text);
 }
 
 button {
-    background-color: var(--purple-dark-1);
+    background-color: var(--teal-medium-3);
     border: none;
-    color: var(--purple-light-2);
+    color: var(--light-2);
     font-weight: var(--font-weight-text2);
     font-size: 14px;
     cursor: pointer;
@@ -132,13 +132,16 @@ button {
   } */
 
 .trendingPreview-container,
+.trendingTVPreview-container,
 .categoriesPreview-container,
 footer {
     margin-top: 30px;
+
 }
 
 .trendingPreview-header,
 .categoriesPreview-title {
+
     margin-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
@@ -147,7 +150,7 @@ footer {
 .movie-container {
     cursor: pointer;
     font-size: 18px;
-    color: var(--purple-dark-1);
+    color: var(--teal-dark-1);
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title2);
 }
@@ -162,7 +165,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 
@@ -213,7 +216,7 @@ footer {
 
 .header-title {
     margin-bottom: 16px;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 .header-arrow {
@@ -226,11 +229,11 @@ footer {
 
 .header-arrow--white {
     margin: 20px;
-    color: var(--purple-light-1);
+    color: var(--light-1);
 }
 
 .header-arrow--white:hover {
-    color: var(--purple-medium-3);
+    color: var(--teal-medium-3);
     text-shadow: 2px 2px 5px var(--yellow);
 }
 
@@ -264,6 +267,11 @@ footer {
     border-bottom-right-radius: 8px;
 }
 
+.header-searchForm button:hover {
+    background-color: #32E0C4;
+}
+
+
 
 /* ======================= TRENDING ======================= */
 .trendingPreview-header {
@@ -274,9 +282,17 @@ footer {
 }
 
 .trendingPreview-btn {
+    font-weight: lighter;
     border-radius: 8px;
     height: 32px;
-    width: 72px;
+    width: 150px;
+}
+
+.trendingPreview-btn:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .trendingPreview-movieList {
@@ -313,41 +329,89 @@ footer {
     height: 40px;
 }
 
+/* ======================= TRENDING TV ======================= */
+.trendingTVPreview-header {
+    display: flex;
+    padding-bottom: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trendingTVPreview-btn {
+    border-radius: 8px;
+    height: 32px;
+    width: 72px;
+}
+
+.trendingTVPreview-movieList {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height: 280px;
+    padding-left: 24px;
+    padding-bottom: 16px;
+}
+
+.trendingTVPreview-movieList .movie-container {
+    display: inline-block;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.trendingTVPreview-movieList .movie-container .movie-img {
+    height: 225px;
+    min-height: 225px;
+    max-height: 225px;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+}
+
+.movie-titlePreview {
+    color: var(--teal-dark-1);
+    overflow: hidden;
+    white-space: normal;
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 200px;
+    height: 40px;
+}
+
 /* ======================= CATEGORIES ======================= */
 .category-container {
     height: 100%;
-}
-
-.category-title {
-    margin-bottom: 8px;
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
 }
 
 .categoriesPreview-list {
     display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-    flex-wrap: wrap;
-    gap: 10px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    overflow-x: scroll;
+    justify-content: space-between;
+    overflow-y: hidden;
+    padding-left: 24px;
+    padding-bottom: 50px;
 }
 
-
-
-.category-title::before {
-    content: '••••';
-    color: transparent;
-    /* TODO: cambiar color por ID de la categoría */
+.category-title {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: var(--idColor);
-    border-radius: 8px;
+    border-radius: 10px;
     margin-right: 8px;
-    width: 8px;
-    height: 8px;
+    width: 150px;
+    height: 30px;
+
 }
+
 
 #id28 {
     --idColor: var(--yellow);
@@ -358,7 +422,7 @@ footer {
 }
 
 #id16 {
-    --idColor: var(--green);
+    --idColor: var(--purple);
 }
 
 #id35 {
@@ -370,11 +434,11 @@ footer {
 }
 
 #id99 {
-    --idColor: var(--purple-dark-1);
+    --idColor: var(--teal-dark-1);
 }
 
 #id18 {
-    --idColor: var(--purple-medium-1);
+    --idColor: var(--teal-medium-1);
 }
 
 #id10751 {
@@ -386,7 +450,7 @@ footer {
 }
 
 #id36 {
-    --idColor: var(--green);
+    --idColor: var(--purple);
 }
 
 #id27 {
@@ -398,11 +462,11 @@ footer {
 }
 
 #id9648 {
-    --idColor: var(--purple-dark-1);
+    --idColor: var(--teal-dark-1);
 }
 
 #id10749 {
-    --idColor: var(--purple-medium-1);
+    --idColor: var(--teal-medium-1);
 }
 
 #id878 {
@@ -414,7 +478,7 @@ footer {
 }
 
 #id53 {
-    --idColor: var(--green);
+    --idColor: var(--purple);
 }
 
 #id10752 {
@@ -428,11 +492,14 @@ footer {
 
 /* Generic List (search, trending & category) */
 .genericList-container {
+    font-weight: bold;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 32px 24px;
+    gap: 20px;
 }
 
 .genericList-container .movie-container {
@@ -451,16 +518,16 @@ footer {
     border-top-right-radius: 16px;
     padding: 32px 24px;
     margin-top: 600px;
-    height: 550px;
+    height: 650px;
     width: 100%;
     z-index: 1;
     position: absolute;
-    background-color: var(--purple-light-1);
+    background-color: var(--light-1);
 }
 
 .movieDetail-title {
     display: inline-block;
-    width: 80%;
+    width: 60%;
     margin: 0 0 16px 0;
     padding: 0;
 }
@@ -468,8 +535,28 @@ footer {
 .movieDetail-score {
     display: inline-block;
     text-align: right;
-    width: 18%;
+    width: 10%;
     font-weight: var(--font-weight-title2);
+    margin-right: 5px;;
+}
+.btnWatchTrailer{
+    background-color: transparent;
+    color: #0D7377;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 5px;
+    height: 30px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+}
+.btnWatchTrailer:hover{
+    background-color: transparent;
+    color: #3F0071;   
 }
 
 .movieDetail-score::before {
@@ -523,8 +610,8 @@ footer {
     gap: 50px;
     font-family: var(--font-family-text);
     font-weight: var(--font-weight-text1);
-    background-color: var(--light-black1);
-    color: var(--gray-light-1);
+    background-color: black;
+    color: var(--light-2);
     text-align: center;
     align-items: center;
     justify-content: center;
