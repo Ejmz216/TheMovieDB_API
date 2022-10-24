@@ -1,15 +1,16 @@
-API TheMovieDB 
-
-Práctica sobre consumo de API REST con JavaScript.
-Single Page Application con hash navigation. 
-Creación de un buscador de películas de TheMovieDB.
-
-Layout 1:
+<div>
+   <h1 align="center">TheMovieDB - API REST </h1>
+   
+<br />
+<h3>
+Práctica sobre consumo de API REST con JavaScript, Single Page Application con hash navigation y Creación de un buscador de películas de TheMovieDB.
+</h3>
+Este proyecto, se enfoca principalmente en el consumo de API REST. Responsividad, optimización y mejoramiento de Layout se actualizará a futuro
+<h3>
+Ver en Netlify: <a href="https://thescreenejmz216.netlify.app/">The screen</a>
 </br>
-<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/195727175-48a25cd9-4af1-471e-906f-6df029d805f1.png">
-
 </br>
-Layout 2 Layout:
+Actual Layout: 
 </br>
 <img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197603038-ba910b45-97f5-484e-b8b6-c6a9ab3eed9e.png">
 
