@@ -11,5 +11,5 @@ Layout 1:
 </br>
 Layout 2 Layout:
 </br>
-![layout2](https://user-images.githubusercontent.com/67802793/197603038-ba910b45-97f5-484e-b8b6-c6a9ab3eed9e.png)
+<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197603038-ba910b45-97f5-484e-b8b6-c6a9ab3eed9e.png">
 
