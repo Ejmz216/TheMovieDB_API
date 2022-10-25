@@ -8,6 +8,7 @@ trendingBtn.addEventListener('click', () => {
 
 arrowBtn.addEventListener('click', () => {
     history.back();
+    posterImage.innerHTML='';
     // location.hash = '#home';
 });
 
@@ -27,10 +28,10 @@ function navigator() {
     }
     else if (location.hash.startsWith('#category')) {
         categoriesPage();
-    } 
+    }
     else if (location.hash.startsWith('#program')) {
         TVDetailPage();
-    }else {
+    } else {
         homePage();
     }
 
@@ -53,6 +54,8 @@ function homePage() {
     categoriesPreviewSection.classList.remove('inactive'); //
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
+
+
 
     getPosterImg();
     getTrendingTV();

@@ -22,7 +22,7 @@ function createMovies(movies, container) {
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie-img');
         movieImg.setAttribute('alt', movie.title);
-        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + movie.poster_path);
+        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path);
 
 
         const movieTitle = document.createElement('h1');
@@ -85,17 +85,24 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 const n = getRandomInt(20);
-
+//--------------
 async function getPosterImg() {
+
+    /*     posterContainer.innerHTML = ''; */
+
     const { data } = await api('discover/movie');
     const collections = data.results;
-
-    const posterImage = document.createElement('img');
+    const movieImgUrl = 'https://image.tmdb.org/t/p/original' + collections[n].backdrop_path
+    /* const posterImage = document.createElement('img');
     posterImage.classList.add('poster-img');
+    posterImage.setAttribute('id', 'pImage');
     posterImage.setAttribute('src', 'https://image.tmdb.org/t/p/original' + collections[n].backdrop_path);
-
-    imageContainer.insertBefore(posterImage, darktheme);
-    /* imageContainer.appendChild(posterImage); */
+    imageContainer.insertBefore(posterContainer, darktheme);
+    posterContainer.appendChild(posterContainer);*/
+    imageContainer.style.background = `url(${movieImgUrl})`;
+    imageContainer.style.objectFit = 'cover';
+    imageContainer.style.width = '100%';
+    imageContainer.style.height = '600px';
 }
 
 async function getTrendingMoviesPreview() {
@@ -211,6 +218,6 @@ async function getTVTrailer(id) {
     const { data } = await api(`/tv/${id}/videos`);
     const links = data.results;
     console.log(links);
-    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[0].key}`);
+    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[2].key}`);
 
 }

@@ -34,3 +34,4 @@ const movieDetailDescription = document.querySelector('.movieDetail-description'
 const movieDetailScore = document.querySelector('.movieDetail-score');
 
 const btnWatchTrailer = document.querySelector('.btnWatchTrailer');
+const posterImage = document.querySelector('.poster-image');
