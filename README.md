@@ -8,6 +8,10 @@ Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST. O
 <h3>
 👀 → Ver en Netlify: <a href="https://thescreenejmz216.netlify.app/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
 </br>
+</br>
+</br>
+
+<h1 align="center">Commits</h1> 
 
 ## →  Initial Commit: Configuración del entorno de desarrollo.
 
