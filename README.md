@@ -12,5 +12,4 @@ Ver en Netlify: <a href="https://thescreenejmz216.netlify.app/">The screen</a>
 </br>
 Actual Layout: 
 </br>
-<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197603038-ba910b45-97f5-484e-b8b6-c6a9ab3eed9e.png">
-
+<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197844017-48cde177-5ea3-44a7-8473-e7b302f0b901.png">
