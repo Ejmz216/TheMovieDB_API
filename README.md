@@ -12,12 +12,36 @@ Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST. O
 </br>
 
 <h1 align="center">Commits</h1> 
+<details>
+  <summary><h2>Initial Commit: Configuración del entorno de desarrollo.</h2></summary>
+  <ol type="1">
+    <li> Creamos el repositorio en GitHub
+    <li>Clonamos el repositorio
+    <li>En VSCode creamos package.json (npm init)
+    <li>Creamos las carpetas para js y css y el index.html
+    <li>Para más facilidad temporal y sin usar variables globales, creamos archivo para la api-key de TMDB en js 
+    <li>Finalmente, agregamos el archivo al .gitignore
+  </ol>
+</details>
 
-## →  Initial Commit: Configuración del entorno de desarrollo.
 
-## → Commit 1: Maquetacíon del proyecto: HTML y CSS.
+<details>
+  <summary><h2>Commit 1: Maquetacíon del proyecto: HTML y CSS.</h2></summary>
+  <ol type="1">
+    <li> Crear un body con los componentes de Header, Trending Movies, Categories, trending TV, 
+      Genereic List, Movie Details y Footer. Esto se detalla mejor en el código del repositorio.
+    <li>Agregamos la clase inactive para luego manipular el DOM desde js
+  </ol>
+</details>
 
-## → Commit 2: Layout 1.
+
+<details>
+  <summary><h2>Commit 2: Layout 1.</h2></summary>
+  <ol type="1">
+    <li> Finalizamos la definción del primer Layout. La cual se aprecia acontinuación:
+      <img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197905999-b07fe6ea-917d-49f8-8f64-aaadfb98bee6.png">
+  </ol>
+</details>
 
 ## → Commit 3: Layout 2.
 
