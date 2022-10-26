@@ -9,8 +9,30 @@ const api = axios.create({
     },
 });
 // ====================== UTIL =====================================
+/* function createObserver() {
+    return new IntersectionObserver((elements) => {
+        elements.forEach(element => {
+            if (element.isIntersecting)
+                element.target.setAttribute(
+                    'src',
+                    element.target.dataset.img
+                )
+        })
+    })
+}
+//creo el observer,.
+let observer = createObserver() */
 
-function createMovies(movies, container) {
+const lazyloader = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const url = entry.target.getAttribute('data-img');
+            entry.target.setAttribute('src', url);
+        }
+    })
+});
+
+function createMovies(movies, container, lazyload = false) {
     container.innerHTML = '';
     movies.forEach(movie => {
         const movieContainer = document.createElement('div');
@@ -22,20 +44,31 @@ function createMovies(movies, container) {
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie-img');
         movieImg.setAttribute('alt', movie.title);
-        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path);
+        /*  movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w500' + movie.poster_path); */
+        movieImg.setAttribute(lazyload ? 'data-img' : 'src', 'https://image.tmdb.org/t/p/w300/' + movie.poster_path);
 
-
+        movieImg.addEventListener('error', () => {
+            movieImg.setAttribute('src', `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMUez6DwAD8AIIOhah/wAAAABJRU5ErkJggg==`)
+            const movieImgTitleSpan = document.createElement('span');
+            const movieImgTitle = document.createTextNode(movie.title);
+            movieContainer.appendChild(movieImgTitleSpan);
+            movieImgTitleSpan.appendChild(movieImgTitle);
+        })
         const movieTitle = document.createElement('h1');
         movieTitle.classList.add('movie-titlePreview');
         const movieTitleText = document.createTextNode(movie.title);
 
+        /* observer.observe(movieImg); */
+        if (lazyload) {
+            lazyloader.observe(movieImg);
+        }
         movieContainer.appendChild(movieImg);
         movieTitle.appendChild(movieTitleText);
         movieContainer.appendChild(movieTitle);
         container.appendChild(movieContainer);
     });
 }
-function createTV(tv, container) {
+function createTV(tv, container, lazyload = false) {
     container.innerHTML = '';
     tv.forEach(program => {
         const movieContainer = document.createElement('div');
@@ -46,13 +79,17 @@ function createTV(tv, container) {
 
         const movieImg = document.createElement('img');
         movieImg.classList.add('movie-img');
-        movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + program.poster_path);
+        movieImg.setAttribute(lazyload ? 'data-img' : 'src', 'https://image.tmdb.org/t/p/w300/' + program.poster_path);
+        /* movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + program.poster_path); */
 
 
         const movieTitle = document.createElement('h1');
         movieTitle.classList.add('movie-titlePreview');
         const movieTitleText = document.createTextNode(program.original_name);
 
+        if (lazyload) {
+            lazyloader.observe(movieImg);
+        }
         movieContainer.appendChild(movieImg);
         movieTitle.appendChild(movieTitleText);
         movieContainer.appendChild(movieTitle);
@@ -81,6 +118,7 @@ function createCategories(categories, container) {
     });
 }
 // ====================== API CALLS ================================
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -92,7 +130,7 @@ async function getPosterImg() {
 
     const { data } = await api('discover/movie');
     const collections = data.results;
-    const movieImgUrl = 'https://image.tmdb.org/t/p/original' + collections[n].backdrop_path
+    const movieImgUrl = 'https://image.tmdb.org/t/p/original' + collections[n].backdrop_path;
     /* const posterImage = document.createElement('img');
     posterImage.classList.add('poster-img');
     posterImage.setAttribute('id', 'pImage');
@@ -110,7 +148,7 @@ async function getTrendingMoviesPreview() {
     const movies = data.results;
 
 
-    createMovies(movies, trendingPreviewMoviesContainer);
+    createMovies(movies, trendingPreviewMoviesContainer, true);
 }
 
 async function getCategoriesPreview() {
@@ -119,7 +157,7 @@ async function getCategoriesPreview() {
 
     createCategories(categories, categoriesPreviewContainer);
 }
-
+//----- MOVIES ---
 async function getMoviesByCategory(id) {
     const { data } = await api('discover/movie', {
         params: {
@@ -135,14 +173,6 @@ async function getTrendingMovies() {
     const movies = data.results;
 
     createMovies(movies, genericSection);
-}
-
-async function getTrendingTV() {
-    const { data } = await api('trending/tv/week');
-
-    const tv = data.results;
-
-    createTV(tv, trendingTVPreviewContainer);
 }
 
 async function getMoviesBySearch(query) {
@@ -177,6 +207,40 @@ async function getMovieById(id) {
     getRelatedMoviesId(id);
 }
 
+async function getRelatedMoviesId(id) {
+    const { data } = await api(`movie/${id}/recommendations`);
+    const relatedMovies = data.results;
+
+
+    createMovies(relatedMovies, relatedMoviesContainer);
+}
+
+async function getMovieTrailer(id) {
+    const { data } = await api(`/movie/${id}/videos`);
+    const links = data.results;
+    console.log(links);
+    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[0].key}`);
+
+}
+
+//----- TV ---
+
+async function getTrendingTV() {
+    const { data } = await api('trending/tv/week');
+
+    const tv = data.results;
+
+    createTV(tv, trendingTVPreviewContainer, true);
+}
+
+async function getTVTrailer(id) {
+    const { data } = await api(`/tv/${id}/videos`);
+    const links = data.results;
+    console.log(links);
+    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[2].key}`);
+
+}
+
 async function getTVById(id) {
     const { data: tv } = await api('tv/' + id);
 
@@ -196,28 +260,4 @@ async function getTVById(id) {
 
     createCategories(tv.genres, movieDetailCategoriesList);
     getRelatedMoviesId(id);
-}
-
-async function getRelatedMoviesId(id) {
-    const { data } = await api(`movie/${id}/recommendations`);
-    const relatedMovies = data.results;
-
-
-    createMovies(relatedMovies, relatedMoviesContainer);
-}
-
-async function getMovieTrailer(id) {
-    const { data } = await api(`/movie/${id}/videos`);
-    const links = data.results;
-    console.log(links);
-    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[0].key}`);
-
-}
-
-async function getTVTrailer(id) {
-    const { data } = await api(`/tv/${id}/videos`);
-    const links = data.results;
-    console.log(links);
-    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[2].key}`);
-
 }

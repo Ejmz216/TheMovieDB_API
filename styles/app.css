@@ -158,6 +158,35 @@ footer {
 
 .movie-img {
     border-radius: 8px;
+    box-shadow:
+        inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.trendingPreview-movieList .movie-container:hover {
+    transform: scale(1.2);
+    transition-duration: .5s;
+    transition-delay:.5s;
+    padding: 10px;
+}
+
+.movie-container {
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-container span {
+    background-color: var(--darkBlue);
+    color: var(--light-2);
+    left: 0;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
 }
 
 .categoriesPreview-list,
@@ -169,8 +198,6 @@ footer {
     /* flex-wrap: wrap; */
 
 }
-
-
 /*============================== HEADER ================================*/
 /* .header-container {
     padding-: 40px;
@@ -203,8 +230,8 @@ footer {
 }
 
 .header-container--long {
-    background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
+    /* background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg'); */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%);
     background-size: cover !important;
     height: 800px;
     position: absolute;
@@ -274,8 +301,6 @@ footer {
     background-color: #32E0C4;
 }
 
-
-
 /* ======================= TRENDING ======================= */
 .trendingPreview-header {
     display: flex;
@@ -302,9 +327,10 @@ footer {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 300px;
+    height: 350px;
     padding-left: 24px;
-    padding-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 10px;
 }
 
 .trendingPreview-movieList .movie-container {
@@ -321,8 +347,6 @@ footer {
     min-width: 150px;
     max-width: 150px;
 }
-
-
 
 /* ======================= TRENDING TV ======================= */
 .trendingTVPreview-header {
@@ -381,6 +405,7 @@ footer {
     font-weight: 500;
     max-width: 160px;
     height: 40px;
+    margin-top: 10px;
 }
 
 /* ======================= CATEGORIES ======================= */
@@ -403,16 +428,12 @@ footer {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-
-
 }
-
 
 .category-title {
     /*     font-weight: bold;
     font-size: 20px;
     color: white;
-    cursor: pointer;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -421,7 +442,7 @@ footer {
     margin-right: 8px;
     width: 150px;
     height: 30px;
-
+    cursor: pointer;
 }
 
 .category-title::before {
@@ -434,7 +455,6 @@ footer {
     width: 8px;
     height: 8px;
 }
-
 
 #id28 {
     --idColor: var(--yellow);
@@ -533,7 +553,6 @@ footer {
 .genericList-container .movie-img {
     width: 100%;
 }
-
 
 /* Movie Detail */
 .movieDetail-container {

@@ -8,7 +8,6 @@ trendingBtn.addEventListener('click', () => {
 
 arrowBtn.addEventListener('click', () => {
     history.back();
-    posterImage.innerHTML='';
     // location.hash = '#home';
 });
 
