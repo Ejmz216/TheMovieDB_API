@@ -61,6 +61,45 @@ Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST. O
 
 ## → Commit 11: Loading Skeletons.
 
+<details>
+  <summary><h2>Commit 12: Intersection Observer</h2></summary>
+  <ol type="1", align= "justify">
+    <li> La Intersection Observer API es la herramienta que nos va a permitir observar cambios a medida que distintos elementos vayan apareciendo o desapareciendo de nuestro documento 
+        <ul>    
+          <li> Se crea el intersection observer llamando a su constructor y pasándole una función callback para que se ejecute cuando se cruce un umbral (threshold) en             una u otra dirección:
+            
+            ```js
+                  let options = {
+                  root: document.querySelector('#scrollArea'),
+                  rootMargin: '0px',
+                  threshold: 1.0
+                  }
+                  let observer = new IntersectionObserver(callback, options);
+            
+            ```
+<li>Un umbral de 1.0 significa que cuando el 100% del elemento target está visible dentro del elemento especificado por la opción root, la función callback es invocada.   
+      </ul>      
+
+<li> En este caso se implementa un IntersectionObserver que cubra toda la pagina, por ende no necesitamos la propiedad “options” que especifica el “root” donde queremos aplicar nuestro observador. Solo se necesita la función callback que en este caso la represento con una arrow function, si el movieImg en main.js se esta viendo en pantalla (entry.isIntersecting) la mostrará en pantall asignandole “setAttribute('src', url)” (se podría hacer también para cada container y mejorando un poco el rendimiento) de la siguiente manera:
+  
+              ```js
+                const lazyloader = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        const url = entry.target.getAttribute('data-img');
+                        if (entry.isIntersecting) {
+                            entry.target.setAttribute('src', url);
+                        }
+                    })
+                });
+                /* en la función create movies, cambiamos el atributo donde pondremos la imagen como 'data-img'*/
+                movieImg.setAttribute('data-img', 'https://image.tmdb.org/t/p/w300/' + movie.poster_path);
+
+                /* y por medio de nuestro lazy loader observamos todas las imagenes de la página*/
+                lazyloader.observe(movieImg);
+              ```
+      
+</ol>
+</details>
 
 
 
