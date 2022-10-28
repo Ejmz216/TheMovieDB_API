@@ -102,6 +102,53 @@ Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST. O
 </details>
 
 
+<details>
+  <summary><h2>Commit 13: Infinite scrolling</h2></summary>
+  En esta parte se  busca implementar la funcionalidad de “Infinite scrollling” que es bastante adecuada a este proyecto al momento de buscar más información o peliculas. Como su nombre lo dice en inglés, la idea es que en cada módulo de busqueda de información como “search”, “get trending movies” o “get movies by category” se pueda bajar la vista de pagina y cada vez que se llegue al máximo de la pagina, se carguen cada vez más peliculas o series hasta el límite máximo que nos de la API (1000 páginas de peliculas). 
+
+Para ello hacemos uso de:
+<ol type="1">
+    <li> scrollTop.document.documentElement: Que nos indica la medida de la distancia desde el límite superior de un elemento al límite superior de su contenido visible.
+    <li> scrollHeight.document.documentElement: Es igual a la altura mínima que necesitaría el elemento para que quepa todo el contenido en la ventana gráfica sin usar una barra de desplazamiento vertical.
+    <li> clientHeight.document.documentElement: Es igual a la altura a la que se encuentra observando el usuario de la pagina.
+  </ol>
+
+Por tanto se crea una función que llame a estas caracteristicas y calcule si se ha llegado al máximo de la página. En caso de llegar al máximo, se carga el parametro “page” de data proveniente de la API y se le hace un acumulador, resultando así en la carga de aquellas peliculas que se encuentran en la page=2, page=3 y así sucesivamente. Como se muestra acontinuación:
+  
+    ```js
+        async function getPaginatedTrendingMovies() {
+        const {
+            scrollTop,
+            scrollHeight,
+            clientHeight } = document.documentElement;
+
+        const scrollIsBottom = (scrollTop + clientHeight) >= (scrollHeight - 50);
+        const pageIsNotMax = page < maxPage;
+        if (scrollIsBottom && pageIsNotMax) {
+            page++;
+            const { data } = await api('trending/movie/day', {
+                params: {
+                    page,
+                },
+            });
+            const movies = data.results;
+
+            createMovies(
+                movies,
+                genericSection,
+                { lazyLoad: true, clean: false },
+                );
+            }
+
+         }
+              ```
+                                           
+ Este caso solo aplica para la sección de “ver más” en trending movies, pero debe ser implementado de manera general en todas las secciónes de “ver más” que lo requieran, como se muestra a contuniación:
+</details>
+
+
+
+
 
 <h1 align="center">Actual Layout:</h1> 
 <br>
