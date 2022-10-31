@@ -6,7 +6,6 @@ const categoriesPreviewSection = document.querySelector('#categoriesPreview');
 const genericSection = document.querySelector('#genericList');
 const movieDetailSection = document.querySelector('#movieDetail');
 
-
 // Lists & Containers
 
 const imageContainer = document.querySelector('.imageContainer');
@@ -35,3 +34,5 @@ const movieDetailScore = document.querySelector('.movieDetail-score');
 
 const btnWatchTrailer = document.querySelector('.btnWatchTrailer');
 const posterImage = document.querySelector('.poster-image');
+
+// TV Elements
