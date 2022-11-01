@@ -6,7 +6,7 @@ Buscando realizar una Single Page Application con hash navigation, así como tam
 </h3>
 Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST/ optimización. Otras partes como responsividad para soporte en diferentes dispositivos y mejoramiento UI (Layout) se actualizará a futuro.
 <h3>
-👀 → Ver en Pages: <a href="https://ejmz216.github.io/TheMovieDB_API/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
+👀 → Ver en Netlify: <a href="https://thescreenejmz216.netlify.app/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
 </br>
 </br>
 </br>
