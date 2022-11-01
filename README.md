@@ -152,4 +152,4 @@ Por tanto se crea una función que llame a estas caracteristicas y calcule si se
 
 <h1 align="center">Actual Layout:</h1> 
 <br>
-<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/197844017-48cde177-5ea3-44a7-8473-e7b302f0b901.png">
+<img width="612" alt="image" src="https://user-images.githubusercontent.com/67802793/199285257-7265d04e-a682-4660-ac2b-d2ff88ea87e9.png">
