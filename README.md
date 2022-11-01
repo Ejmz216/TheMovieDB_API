@@ -4,7 +4,7 @@
 En esta práctica se realiza el consumo de una API llamada “The Movie Data Base” (TMDB) con JavaScript.
 Buscando realizar una Single Page Application con hash navigation, así como también la creación de un buscador de películas. En este espacio se documentarán los commits realizados en el proyecto, donde se añaden funcionalidades o layouts nuevos hasta el estado más reciente. 
 </h3>
-Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST. Otras partes como responsividad para soporte en diferentes dispositivos, optimización y mejoramiento UI (Layout) se actualizará a futuro.
+Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST/ optimización. Otras partes como responsividad para soporte en diferentes dispositivos y mejoramiento UI (Layout) se actualizará a futuro.
 <h3>
 👀 → Ver en Netlify: <a href="https://thescreenejmz216.netlify.app/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
 </br>
