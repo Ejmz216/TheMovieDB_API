@@ -22,8 +22,10 @@ window.addEventListener('scroll', infiniteScroll, false);
 function navigator() {
     console.log({ location });
     if (infiniteScroll) {
-        window.removeEventListener('scroll', infiniteScroll, {passive:
-            false});
+        window.removeEventListener('scroll', infiniteScroll, {
+            passive:
+                false
+        });
         infiniteScroll = undefined;
     }
     if (location.hash.startsWith('#trends')) {
@@ -37,9 +39,9 @@ function navigator() {
     else if (location.hash.startsWith('#category')) {
         categoriesPage();
     }
-    else if (location.hash.startsWith('#program')) {
+   /*  else if (location.hash.startsWith('#program')) {
         TVDetailPage();
-    } else {
+    }  */else {
         homePage();
     }
 
@@ -47,8 +49,10 @@ function navigator() {
     document.documentElement.scrollTop = 0;
 
     if (infiniteScroll) {
-        window.addEventListener('scroll', infiniteScroll, {passive:
-            false});
+        window.addEventListener('scroll', infiniteScroll, {
+            passive:
+                false
+        });
     }
 }
 function homePage() {
@@ -63,15 +67,17 @@ function homePage() {
 
 
     trendingPreviewSection.classList.remove('inactive');
-    trendingTVPreviewSection.classList.remove('inactive');
+    /* trendingTVPreviewSection.classList.remove('inactive'); */
     categoriesPreviewSection.classList.remove('inactive'); //
     genericSection.classList.add('inactive');
     movieDetailSection.classList.add('inactive');
+    likedContainer.classList.remove('inactive');
 
 
 
     getPosterImg();
-    getTrendingTV();
+    getLikedMovies();
+    /* getTrendingTV(); */
     getTrendingMoviesPreview();
     getCategoriesPreview();
 }
@@ -89,10 +95,11 @@ function categoriesPage() {
     imageContainer.classList.add('inactive');
 
     trendingPreviewSection.classList.add('inactive');
-    trendingTVPreviewSection.classList.add('inactive');
+    /* trendingTVPreviewSection.classList.add('inactive'); */
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+    likedContainer.classList.add('inactive');
 
     // ['#category', 'id-name']
     const [_, categoryData] = location.hash.split('=');
@@ -116,17 +123,18 @@ function movieDetailPage() {
     imageContainer.classList.add('inactive');
 
     trendingPreviewSection.classList.add('inactive');
-    trendingTVPreviewSection.classList.add('inactive');
+    /* trendingTVPreviewSection.classList.add('inactive'); */
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+    likedContainer.classList.add('inactive');
 
     // ['#movie', '234567']
     const [_, movieId] = location.hash.split('=');
     getMovieById(movieId);
     getMovieTrailer(movieId);
 }
-function TVDetailPage() {
+/* function TVDetailPage() {
     console.log('Program');
 
     headerSection.classList.add('header-container--long');
@@ -144,12 +152,13 @@ function TVDetailPage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
+    likedContainer.classList.add('inactive');
 
     // ['#movie', '234567']
     const [_, movieId] = location.hash.split('=');
     getTVById(movieId);
     getTVTrailer(movieId);
-}
+} */
 function searchPage() {
     console.log('Search');
     headerSection.classList.remove('header-container--long');
@@ -163,10 +172,11 @@ function searchPage() {
     imageContainer.classList.add('inactive');
 
     trendingPreviewSection.classList.add('inactive');
-    trendingTVPreviewSection.classList.add('inactive');
+    /* trendingTVPreviewSection.classList.add('inactive'); */
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+    likedContainer.classList.add('inactive');
 
     // ['#search', 'platzi']
     const [_, query] = location.hash.split('=');
@@ -187,10 +197,11 @@ function trendsPage() {
     imageContainer.classList.add('inactive');
 
     trendingPreviewSection.classList.add('inactive');
-    trendingTVPreviewSection.classList.add('inactive');
+    /* trendingTVPreviewSection.classList.add('inactive'); */
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+    likedContainer.classList.add('inactive');
 
     headerCategoryTitle.innerHTML = 'Trending';
     getTrendingMovies();

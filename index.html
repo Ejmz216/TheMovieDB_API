@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;1000&family=Raleway&family=Roboto+Flex:opsz@8..144&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;1000&family=Niconne&family=Raleway&family=Roboto+Flex:opsz@8..144&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/app.css" />
     <script src="https://kit.fontawesome.com/a580e62678.js" crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
 
         <div class="imageContainer">
             <div class="darktheme"></div>
-            <h1 class="header-title"><i style="color:#32E0C4" class="fa-brands fa-jedi-order"></i> The screen</h1>
+            <h1 class="header-title"><i style="color:#32E0C4" class="fa-brands fa-jedi-order"></i> The Screen</h1>
             <h2 class="header-subtitle">Weaving stories</h2>
         </div>
         <h1 class="header-title header-title--categoryView inactive">Action</h1>
@@ -34,11 +34,11 @@
             <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </header>
-    <!-- ========================== TRENDING MOVIES ========================== -->
+    <!-- ========================== TRENDING MOVIES =================== -->
     <section id="trendingPreview" class="trendingPreview-container">
         <div class="trendingPreview-header">
             <h2 class="trendingPreview-title">Trending Movies <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
-            <button class="trendingPreview-btn">See more <i class="fa-solid fa-circle-info"></i></button>
+            <button class="trendingPreview-btn">Show more <i class="fa-solid fa-circle-info"></i></button>
         </div>
 
         <article class="trendingPreview-movieList">
@@ -46,6 +46,15 @@
             <div class="movie-container movie-container--loading"></div>
             <div class="movie-container movie-container--loading"></div>
             <div class="movie-container movie-container--loading"></div>
+        </article>
+    </section>
+    <!-- ========================= LIKES ======================== -->
+    <section id="liked" class="liked-container">
+        <div class="liked-header">
+            <h2 class=" lied-title">Favourite movies</h2>
+        </div>
+        <article class="liked-movieList">
+
         </article>
     </section>
     <!-- ========================== CATEGORIES ========================= -->
@@ -62,24 +71,11 @@
       </div> -->
         </article>
     </section>
-    <!-- ========================== TRENDING TV ========================== -->
-    <section id="trendingTVPreview" class="trendingTVPreview-container">
-        <div class="trendingPreview-header">
-            <h2 class="trendingPreview-title">Trending on TV <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
-            <button class="trendingPreview-btn">See more <i class="fa-solid fa-circle-info"></i></button>
-        </div>
-
-        <article class="trendingTVPreview-movieList">
-
-        </article>
-    </section>
     <!-- ========================= GENERIC LIST ======================== -->
     <section id="genericList" class="genericList-container inactive">
         <div class="movie-container movie-container--loading"></div>
         <div class="movie-container movie-container--loading"></div>
-        <div class="movie-container movie-container--loading">
-
-           
+        <div class="movie-container movie-container--loading"></div>
     </section>
     <!-- ======================== MOVIE DETAILS ======================== -->
     <section id="movieDetail" class="movieDetail-container inactive">
@@ -107,12 +103,24 @@
                 <div class="movie-container movie-container--loading"></div>
         </article>
     </section>
+
+    <!-- ========================== TRENDING TV ======================== -->
+    <!--  <section id="trendingTVPreview" class="trendingTVPreview-container">
+        <div class="trendingPreview-header">
+            <h2 class="trendingPreview-title">Trending on TV <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
+            <button class="trendingPreview-btn">Show more <i class="fa-solid fa-circle-info"></i></button>
+        </div>
+
+        <article class="trendingTVPreview-movieList">
+
+        </article>
+    </section> -->
     <!-- ========================== FOOTER ============================ -->
     <footer>With 💚​ @ejmunoz216
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-linkedin-in"></i></a>
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-github"></i></a>
     </footer>
-    <!-- ========================== SCRIPTS =========================== -->
+    <!-- ========================== SCRIPTS ============================ -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./src/secrets.js"></script>
     <script src="./src/nodes.js"></script>
