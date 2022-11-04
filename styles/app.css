@@ -37,7 +37,7 @@ body {
     font-family: var(--font-family-text);
     font-weight: var(--font-weight-text1);
     font-size: 16px;
-    margin: 4px 40px 0px 40px;
+    margin: 4px 0px 0px 0px;
     padding: 0;
 }
 
@@ -95,7 +95,7 @@ h2 {
 
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title2);
-    
+
 }
 
 h3 {
@@ -135,6 +135,8 @@ button {
 .trendingPreview-container,
 .trendingTVPreview-container,
 .categoriesPreview-container,
+.categoriesTVPreview-container,
+.likedTV-container,
 .liked-container,
 footer {
     margin-top: 30px;
@@ -151,7 +153,8 @@ footer {
     padding-right: 24px;
 }
 
-.movie-container {
+.movie-container,
+.program-container {
     cursor: pointer;
     font-size: 18px;
     color: var(--teal-dark-1);
@@ -160,21 +163,24 @@ footer {
     margin-top: 16px;
 }
 
-.movie-img {
+.movie-img,
+.program-img {
     border-radius: 8px;
     box-shadow:
         inset 0 -3em 3em rgba(0, 0, 0, 0.1),
         0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
-.trendingPreview-movieList .movie-container:hover {
+.trendingPreview-movieList .movie-container:hover,
+.trendingTVPreview-programList .program-container:hover {
     transform: scale(1.2);
     transition-duration: .5s;
     transition-delay: .5s;
     padding: 10px;
 }
 
-.movie-container {
+.movie-container,
+.program-container {
     cursor: pointer;
     position: relative;
 }
@@ -194,7 +200,8 @@ footer {
 }
 
 .categoriesPreview-list,
-.categories-list {
+.categoriesTVPreview-list,
+.categoriesTV-list .categories-list {
     display: flex;
     align-items: center;
     position: relative;
@@ -202,7 +209,8 @@ footer {
 
 }
 
-.movie-btn {
+.movie-btn,
+.TV-btn {
     background-color: var(--teal-medium-2);
     position: absolute;
     top: 5px;
@@ -214,17 +222,20 @@ footer {
     margin: 0;
 }
 
-.movie-btn::before {
+.movie-btn::before,
+.TV-btn::before {
     content: '🤍';
     /* font-size: 13px; */
 }
 
-.movie-btn--liked {
+.movie-btn--liked,
+.TV-btn--liked {
     background-color: var(--teal-medium-1);
     box-shadow: 0px 0px 10px 2px var(--darkBlue);
 }
 
-.movie-btn--liked::before {
+.movie-btn--liked::before,
+.TV-btn--liked::before {
     content: '💖';
 }
 
@@ -232,7 +243,6 @@ footer {
 /* .header-container {
     padding-: 40px;
   } */
-
 .imageContainer {
     background-size: cover !important;
     display: flex;
@@ -330,14 +340,16 @@ footer {
 }
 
 /* ======================= TRENDING ======================= */
-.trendingPreview-header {
+.trendingPreview-header,
+.trendingTVPreview-header {
     display: flex;
     align-items: center;
+    padding-bottom: 16px;
     justify-content: space-between;
 }
 
-
-.trendingPreview-btn {
+.trendingPreview-btn,
+.trendingTVPreview-btn {
     background-color: var(--teal-medium-1);
     box-shadow: 0px 5px 10px rgba(45, 35, 66, .3);
     font-weight: lighter;
@@ -347,33 +359,37 @@ footer {
     font-size: 15px;
 
 }
-.trendingPreview-btn:hover {
+
+.trendingPreview-btn:hover,
+.trendingTVPreview-btn:hover {
     background-color: var(--darkBlue);
     color: #fff;
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, var(--darkBlue) 0 -3px 0 inset;
     transform: translateY(-2px);
-} 
-
+}
 
 .trendingPreview-movieList,
 .liked-movieList,
-.trendingTVPreview-movieList {
+.likedTV-List,
+.trendingTVPreview-programList {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    height: 370px;
+    height: 400px;
     padding-left: 24px;
     padding-top: 16px;
     padding-bottom: 10px;
 }
 
-.trendingPreview-movieList .movie-container {
+.trendingPreview-movieList .movie-container,
+.trendingTVPreview-programList .program-container {
     display: inline-block;
     margin-right: 15px;
     text-align: center;
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview-movieList .movie-container .movie-img,
+.trendingTVPreview-programList .program-container .program-img {
     height: 225px;
     min-height: 225px;
     max-height: 225px;
@@ -382,17 +398,45 @@ footer {
     max-width: 150px;
 }
 
+.movie-titlePreview,
+.program-titlePreview {
+    text-overflow: ellipsis;
+    text-align: left;
+    justify-content: center;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 15px;
+    font-weight: 500;
+    max-width: 160px;
+    height: 35px;
+    margin-top: 10px;
+}
 
+.movie-DatePreview,
+.program-DatePreview {
+    text-overflow: ellipsis;
+    text-align: left;
+    justify-content: center;
+    overflow: hidden;
+    white-space: normal;
+    font-size: 10px;
+    font-weight: 500;
+    max-width: 160px;
+    height: 40px;
+    color: gray;
+}
 
-/* ======================= CATEGORIES ======================= */
-.category-container {
+/* ======================= CATEGORIES  ======================= */
+.category-container,
+.categoryTV-container {
     height: 100%;
     padding: 15px;
     /* text-align: center; */
     align-items: center;
 }
 
-.categoriesPreview-list {
+.categoriesPreview-list,
+.categoriesTVPreview-list {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     align-items: center;
@@ -404,8 +448,9 @@ footer {
     white-space: nowrap;
 }
 
-.category-title {
-        font-weight: bold;
+.category-title,
+.categoryTV-title {
+    font-weight: bold;
     font-size: 15px;
     /* color: white; */
     overflow: hidden;
@@ -415,7 +460,8 @@ footer {
     /* text-align: center; */
 }
 
-.category-title::before {
+.category-title::before,
+.categoryTV-title::before {
     content: '••••';
     color: transparent;
     /* TODO: cambiar color por ID de la categoría */
@@ -424,6 +470,38 @@ footer {
     margin-right: 8px;
     width: 8px;
     height: 8px;
+}
+
+/* ======================= GENERIC LIST ======================= */
+/* =============== (search, trending & category) ============== */
+.genericList-container,
+.genericTVList-container {
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 32px 24px;
+    gap: 20px;
+}
+
+.genericList-container .movie-container {
+    display: inline-block;
+    width: 17.5%;
+}
+
+.genericList-container .movie-img {
+    width: 100%;
+}
+
+.genericTVList-container .program-container {
+    display: inline-block;
+    width: 17.5%;
+}
+
+.genericTVList-container .program-img {
+    width: 100%;
 }
 
 #id28 {
@@ -502,30 +580,40 @@ footer {
     --idColor: var(--darkBlue);
 }
 
-
-/* Generic List (search, trending & category) */
-.genericList-container {
-    font-weight: bold;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 32px 24px;
-    gap: 20px;
+#id10759 {
+    --idColor: var(--yellow);
 }
 
-.genericList-container .movie-container {
-    display: inline-block;
-    width: 17.5%;
+#id10762 {
+    --idColor: var(--red);
 }
 
-.genericList-container .movie-img {
-    width: 100%;
+#id10763 {
+    --idColor: var(--yellow);
 }
 
-/*================================ Movie Detail ==============================*/
-.movieDetail-container {
+#id10764 {
+    --idColor: var(--red);
+}
+
+#id10765 {
+    --idColor: var(--teal-medium-2);
+}
+
+#id10766 {
+    --idColor: var(--teal-medium-1);
+}
+
+#id10767 {
+    --idColor: var(--purple);
+}
+
+#id10768 {
+    --idColor: var(--red);
+}
+/*=========================== DETAIL ==============================*/
+.movieDetail-container,
+.TVDetail-container {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     padding: 32px 24px;
@@ -537,14 +625,16 @@ footer {
     background-color: var(--light-1);
 }
 
-.movieDetail-title {
+.movieDetail-title,
+.TVDetail-title {
     display: inline-block;
     width: 60%;
     margin: 0 0 16px 0;
     padding: 0;
 }
 
-.movieDetail-score {
+.movieDetail-score,
+.TVDetail-score {
     display: inline-block;
     text-align: right;
     width: 10%;
@@ -553,7 +643,8 @@ footer {
     ;
 }
 
-.btnWatchTrailer {
+.btnWatchTrailer,
+.btnWatchTrailerTV {
     background-color: transparent;
     color: #0D7377;
     font-weight: bold;
@@ -569,33 +660,39 @@ footer {
 
 }
 
+.btnWatchTrailer:hover,
 .btnWatchTrailer:hover {
     background-color: transparent;
     color: #3F0071;
 }
 
-.movieDetail-score::before {
+.movieDetail-score::before,
+.TVDetail-score::before {
     content: '★';
     color: var(--yellow);
     padding-right: 4px;
 }
 
-.movieDetail-description {
+.movieDetail-description,
+.TVDetail-description {
     margin: 0 0 24px 0;
     color: var(--gray-light-1);
     text-align: justify;
 }
 
-.relatedMovies-container {
+.relatedMovies-container,
+.relatedTV-container {
     margin-top: 24px;
     height: 216px;
 }
 
-.relatedMovies-title {
+.relatedMovies-title,
+.relatedTVs-title {
     margin-bottom: 16px;
 }
 
-.relatedMovies-scrollContainer {
+.relatedMovies-scrollContainer,
+.relatedTV-scrollContainer {
     position: absolute;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -605,29 +702,33 @@ footer {
 
 }
 
-.relatedMovies-scrollContainer .movie-container {
+.relatedMovies-scrollContainer .movie-container,
+.relatedTV-scrollContainer .program-container {
     display: inline-block;
     margin-right: 15px;
 }
 
-.relatedMovies-scrollContainer .movie-img {
+.relatedMovies-scrollContainer .movie-img,
+.relatedTV-scrollContainer .program-img {
     width: 200px;
     min-width: 200px;
     max-width: 200px;
-    height: 261.5px;
+    height: 300px;
     min-height: 261.5px;
-    max-height: 261.5px;
+    max-height: 300px;
 }
 
 
 /* ======================= LIKES ========================= */
-.liked-movieList .movie-container {
+.liked-movieList .movie-container,
+.likedTV-List .program-container {
     display: inline-block;
     margin-right: 15px;
     text-align: center;
 }
 
-.liked-movieList .movie-container .movie-img {
+.liked-movieList .movie-container .movie-img,
+.likedTV-List .program-container .program-img {
     height: 225px;
     min-height: 225px;
     max-height: 225px;
@@ -635,6 +736,7 @@ footer {
     min-width: 150px;
     max-width: 150px;
 }
+
 /* ======================= FOOTER ======================= */
 footer {
     display: grid;
@@ -652,77 +754,6 @@ footer {
     width: 100%;
     height: 50px;
 }
-
-/* footer {
-    background-color: black;
-    color: var(--light-2);
-    text-align: center;
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
- */
-
-/* ======================= TRENDING TV ======================= */
-.trendingTVPreview-header {
-    display: flex;
-    padding-bottom: 16px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.trendingTVPreview-btn {
-    font-weight: lighter;
-    border-radius: 8px;
-    height: 32px;
-    width: 150px;
-}
-
-.trendingTVPreview-btn:hover {
-    background-color: #2EE59D;
-    box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.trendingTVPreview-movieList .program-container {
-    display: inline-block;
-    margin-right: 15px;
-    text-align: center;
-}
-
-.trendingTVPreview-movieList .program-container .movie-img {
-    height: 225px;
-    min-height: 225px;
-    max-height: 225px;
-    width: 150px;
-    min-width: 150px;
-    max-width: 150px;
-}
-
-
-.trendingTVPreview-movieList .program-container:hover {
-    transform: scale(1.2);
-    transition-duration: .5s;
-    transition-delay: .5s;
-    padding: 10px;
-}
-
-.movie-titlePreview,
-.program-titlePreview {
-    text-overflow: ellipsis;
-    text-align: center;
-    justify-content: center;
-    overflow: hidden;
-    white-space: normal;
-    font-size: 15px;
-    font-weight: 500;
-    max-width: 160px;
-    height: 40px;
-    margin-top: 10px;
-}
-
 
 /* ======================= EXTRAS ======================= */
 .inactive {
@@ -796,7 +827,6 @@ footer {
     min-height: 187.5px;
     max-height: 187.5px;
 }
-
 
 /* Animations */
 @keyframes loading-skeleton {

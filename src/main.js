@@ -45,7 +45,6 @@ const lazyLoader = new IntersectionObserver((entries) => {
         }
     });
 });
-
 function createMovies(
     movies,
     container,
@@ -92,6 +91,9 @@ function createMovies(
         const movieTitle = document.createElement('h1');
         movieTitle.classList.add('movie-titlePreview');
         const movieTitleText = document.createTextNode(movie.title);
+        const movieDate= document.createElement('h2');
+        movieDate.classList.add('movie-DatePreview');
+        const movieDateText = document.createTextNode(movie.release_date);
 
         if (lazyload) {
             lazyLoader.observe(movieImg);
@@ -99,7 +101,9 @@ function createMovies(
         movieContainer.appendChild(movieImg);
         movieContainer.appendChild(movieBtn);
         movieTitle.appendChild(movieTitleText);
+        movieDate.appendChild(movieDateText);
         movieContainer.appendChild(movieTitle);
+        movieContainer.appendChild(movieDate);
         container.appendChild(movieContainer);
     });
 }
@@ -135,34 +139,6 @@ function createCategories(categories,
     });
 }
 
-/* function createTV(tv, container, lazyload = false) {
-    container.innerHTML = '';
-    tv.forEach(program => {
-        const movieContainer = document.createElement('div');
-        movieContainer.classList.add('program-container');
-        movieContainer.addEventListener('click', () => {
-            location.hash = '#program=' + program.id;
-        });
-
-        const movieImg = document.createElement('img');
-        movieImg.classList.add('movie-img');
-        movieImg.setAttribute(lazyload ? 'data-img' : 'src', 'https://image.tmdb.org/t/p/w300/' + program.poster_path);
-        /* movieImg.setAttribute('src', 'https://image.tmdb.org/t/p/w300' + program.poster_path); 
-
-        const movieTitle = document.createElement('h1');
-        movieTitle.classList.add('program-titlePreview');
-        const movieTitleText = document.createTextNode(program.original_name);
-
-        if (lazyload) {
-            lazyloader.observe(movieImg);
-        }
-        movieContainer.appendChild(movieImg);
-        movieTitle.appendChild(movieTitleText);
-        movieContainer.appendChild(movieTitle);
-        container.appendChild(movieContainer);
-    });
-} */
-
 // ====================== API CALLS ================================
 
 function getRandomInt(max) {
@@ -181,7 +157,7 @@ async function getPosterImg() {
     posterImage.setAttribute('src', 'https://image.tmdb.org/t/p/original' + collections[n].backdrop_path);
     imageContainer.insertBefore(posterContainer, darktheme);
     posterContainer.appendChild(posterContainer);*/
-    
+
     imageContainer.style.background = `url(${movieImgUrl})`;
     imageContainer.style.objectFit = 'cover';
     imageContainer.style.width = '100%';
@@ -192,7 +168,7 @@ async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day');
     const movies = data.results;
     maxPage = data.total_pages;
-
+    console.log(data);
     createMovies(movies, trendingPreviewMoviesContainer, true);
 }
 
@@ -203,6 +179,7 @@ async function getCategoriesPreview() {
     createCategories(categories, categoriesPreviewContainer);
 }
 //----- MOVIES ---
+
 async function getTrendingMovies() {
     const { data } = await api('trending/movie/day');
     const movies = data.results;
@@ -292,7 +269,7 @@ async function getMoviesBySearch(query) {
     });
     const movies = data.results;
     maxPage = data.total_pages;
-    console.log(maxPage);
+    console.log(movies);
 
     decodeURI(genericSection);
     createMovies(movies, genericSection);
@@ -365,7 +342,6 @@ async function getMovieTrailer(id) {
 
 }
 
-
 function getLikedMovies() {
     const likedMovies = likedMoviesList();
     const moviesArray = Object.values(likedMovies);
@@ -373,43 +349,3 @@ function getLikedMovies() {
     createMovies(moviesArray, likedList, { lazyLoad: true, clean: true });
     console.log(likedMovies);
 }
-
-//----- TV ---
-
-/* async function getTrendingTV() {
-    const { data } = await api('trending/tv/week');
-
-    const tv = data.results;
-
-    createTV(tv, trendingTVPreviewContainer, true);
-}
-
-async function getTVTrailer(id) {
-    const { data } = await api(`/tv/${id}/videos`);
-    const links = data.results;
-    console.log(links);
-    btnWatchTrailer.setAttribute('href', `https://www.youtube.com/watch?v=${links[2].key}`);
-
-}
-
-async function getTVById(id) {
-    const { data: tv } = await api('tv/' + id);
-
-    const movieImgUrl = 'https://image.tmdb.org/t/p/original' + tv.poster_path;
-    headerSection.style.background = `
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0.35) 19.27%,
-        rgba(0, 0, 0, 0) 29.17%
-      ),
-      url(${movieImgUrl})
-    `;
-
-    movieDetailTitle.textContent = tv.name;
-    movieDetailDescription.textContent = tv.overview;
-    movieDetailScore.textContent = tv.vote_average;
-
-    createCategories(tv.genres, movieDetailCategoriesList);
-    getRelatedMoviesId(id);
-}
- */

@@ -51,7 +51,7 @@
     <!-- ========================= LIKES ======================== -->
     <section id="liked" class="liked-container">
         <div class="liked-header">
-            <h2 class=" lied-title">Favourite movies</h2>
+            <h2 class="liked-title">Favourite movies</h2>
         </div>
         <article class="liked-movieList">
 
@@ -104,19 +104,77 @@
         </article>
     </section>
 
+<!-- ______________________________________TV UPDATE___________________________________________ -->
+
     <!-- ========================== TRENDING TV ======================== -->
-    <!--  <section id="trendingTVPreview" class="trendingTVPreview-container">
-        <div class="trendingPreview-header">
-            <h2 class="trendingPreview-title">Trending on TV <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
-            <button class="trendingPreview-btn">Show more <i class="fa-solid fa-circle-info"></i></button>
+    <section id="trendingTVPreview" class="trendingTVPreview-container">
+        <div class="trendingTVPreview-header">
+            <h2 class="trendingTVPreview-title">Trending on TV <i id="fire" class="fa-solid fa-fire fa-fade"></i></h2>
+            <button class="trendingTVPreview-btn">Show more <i class="fa-solid fa-circle-info"></i></button>
         </div>
 
-        <article class="trendingTVPreview-movieList">
+        <article class="trendingTVPreview-programList">
 
         </article>
-    </section> -->
+    </section>
+    <!-- ========================= GENERIC TV LIST ======================== -->
+    <section id="genericTVList" class="genericTVList-container inactive">
+        <div class="movie-container movie-container--loading"></div>
+        <div class="movie-container movie-container--loading"></div>
+        <div class="movie-container movie-container--loading"></div> 
+    </section>
+    <!-- ======================== TV DETAILS ======================== -->
+    <section id="TVDetail" class="TVDetail-container inactive">
+        <h1 class="TVDetail-title">Deadpool</h1>
+        <span class="TVDetail-score">7.6</span>
+        <a class="btnWatchTrailerTV"><i class="fa-solid fa-play"></i> Watch trailer</a>
+        <p class="TVDetail-description">
+            Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
+        </p>
+
+        <article class="TVcategories-list">
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+        </article>
+
+        <article class="relatedTV-container">
+            <h2 class="-title">Similar</h2>
+
+            <div class="relatedTV-scrollContainer">
+                <div class="movie-container movie-container--loading"></div>
+                <div class="movie-container movie-container--loading"></div>
+                <div class="movie-container movie-container--loading"></div>
+                <div class="movie-container movie-container--loading"></div>
+        </article>
+    </section>
+    <!-- ========================== TV CATEGORIES ========================= -->
+    <section id="categoriesTVPreview" class="categoriesTVPreview-container">
+        <h2 class="categoriesPreview-title">TV Categories</h2>
+
+        <article class="categoriesTVPreview-list">
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+            <div class="category-container category-container--loading"></div>
+            <!-- <div class="category-container">
+        <h3 id="id28" class="category-title">Romance</h3>
+      </div> -->
+        </article>
+    </section>
+        <!-- ========================= LIKES ======================== -->
+        <section id="likedTV" class="likedTV-container">
+            <div class="liked-header">
+                <h2 class="liked-title">Favourite Series</h2>
+            </div>
+            <article class="likedTV-List">
+    
+            </article>
+        </section>
+
     <!-- ========================== FOOTER ============================ -->
-    <footer>With 💚​ @ejmunoz216
+    <footer id="footer">With 💚​ @ejmunoz216
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-linkedin-in"></i></a>
         <a href='https://github.com/Ejmz216'><i class="fa-brands fa-github"></i></a>
     </footer>
@@ -125,6 +183,7 @@
     <script src="./src/secrets.js"></script>
     <script src="./src/nodes.js"></script>
     <script src="./src/main.js"></script>
+    <script src="./src/mainTV.js"></script>
     <script src="./src/navigation.js"></script>
 </body>
 
