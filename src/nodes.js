@@ -10,6 +10,7 @@ const footer = document.querySelector('#footer');
 // Lists & Containers
 
 const imageContainer = document.querySelector('.imageContainer');
+const imageContainer2 = document.querySelector('.imageContainer2');
 const searchForm = document.querySelector('#searchForm');
 const trendingPreviewMoviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList');
 const categoriesPreviewContainer = document.querySelector('#categoriesPreview .categoriesPreview-list');

@@ -83,8 +83,8 @@ function createTV(
         programContainer.appendChild(TVBtn);
         programTitle.appendChild(programTitleText);
         programDate.appendChild(programDateText);
-        programContainer.appendChild(programTitle);
         programContainer.appendChild(programDate);
+        programContainer.appendChild(programTitle);
         container.appendChild(programContainer);
     });
 }

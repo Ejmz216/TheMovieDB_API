@@ -102,8 +102,8 @@ function createMovies(
         movieContainer.appendChild(movieBtn);
         movieTitle.appendChild(movieTitleText);
         movieDate.appendChild(movieDateText);
-        movieContainer.appendChild(movieTitle);
         movieContainer.appendChild(movieDate);
+        movieContainer.appendChild(movieTitle);
         container.appendChild(movieContainer);
     });
 }
@@ -145,7 +145,7 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 const n = getRandomInt(20);
-//--------------
+
 async function getPosterImg() {
 
     const { data } = await api('discover/movie');
@@ -163,6 +163,7 @@ async function getPosterImg() {
     imageContainer.style.width = '100%';
     imageContainer.style.height = '600px';
 }
+//--------------
 
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day');

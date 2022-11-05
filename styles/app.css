@@ -5,6 +5,8 @@
 
 :root {
     --light-1: white;
+    --gray-1: #3A4750;
+    --gray-2: #303841;
     --light-2: #F4F6FF;
     --teal-medium-1: #0D7377;
     --teal-medium-2: #32E0C4;
@@ -83,7 +85,6 @@ h3 {
 h1,
 h2 {
     font-size: 35px;
-    color: var(--teal-dark-2);
     font-family: var(--font-family-titles);
     font-weight: var(--font-weight-title1);
     margin: 0;
@@ -137,9 +138,8 @@ button {
 .categoriesPreview-container,
 .categoriesTVPreview-container,
 .likedTV-container,
-.liked-container,
-footer {
-    margin-top: 30px;
+.liked-container {
+    padding-top: 30px;
 
 }
 
@@ -168,7 +168,15 @@ footer {
     border-radius: 8px;
     box-shadow:
         inset 0 -3em 3em rgba(0, 0, 0, 0.1),
-        0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        0.3em 0.3em 1em rgba(0, 0, 0, 0.5);
+}
+.liked-movieList .movie-img,
+.likedTV-List .program-img {
+    border-radius: 8px;
+    box-shadow:
+        inset 0 -3em 3em hsla(0, 0%, 100%, 0.1),
+        0.3em 0.3em 1em rgba(255, 255, 255, 0.3);
+   ;
 }
 
 .trendingPreview-movieList .movie-container:hover,
@@ -408,8 +416,9 @@ footer {
     font-size: 15px;
     font-weight: 500;
     max-width: 160px;
-    height: 35px;
-    margin-top: 10px;
+    height: 53px;
+    /* margin-top: 10px; */
+    color: var(--aqua)
 }
 
 .movie-DatePreview,
@@ -419,10 +428,11 @@ footer {
     justify-content: center;
     overflow: hidden;
     white-space: normal;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     max-width: 160px;
-    height: 40px;
+    margin-top: 10px;
+    height: 15px;
     color: gray;
 }
 
@@ -486,131 +496,68 @@ footer {
     gap: 20px;
 }
 
-.genericList-container .movie-container {
-    display: inline-block;
-    width: 17.5%;
-}
-
-.genericList-container .movie-img {
-    width: 100%;
-}
-
+.genericList-container .movie-container,
 .genericTVList-container .program-container {
     display: inline-block;
     width: 17.5%;
 }
 
-.genericTVList-container .program-img {
+.genericList-container .movie-img,
+.genericTVList-container .program-img  {
     width: 100%;
 }
 
-#id28 {
-    --idColor: var(--yellow);
-}
-
-#id12 {
-    --idColor: var(--red);
-}
-
-#id16 {
-    --idColor: var(--purple);
-}
-
-#id35 {
-    --idColor: var(--lightBlue);
-}
-
-#id80 {
-    --idColor: var(--darkBlue);
-}
-
-#id99 {
-    --idColor: var(--teal-dark-1);
-}
-
-#id18 {
-    --idColor: var(--teal-medium-1);
-}
-
+#id28,
+#id10763,
+#id10759,
+#id878,
 #id10751 {
     --idColor: var(--yellow);
 }
 
-#id14 {
+#id12,
+#id10762,
+#id10764,
+#id14,
+#id10770,
+#id10768 {
     --idColor: var(--red);
 }
 
-#id36 {
-    --idColor: var(--purple);
-}
-
-#id27 {
-    --idColor: var(--lightBlue);
-}
-
-#id10402 {
-    --idColor: var(--darkBlue);
-}
-
-#id9648 {
-    --idColor: var(--teal-dark-1);
-}
-
-#id10749 {
-    --idColor: var(--teal-medium-1);
-}
-
-#id878 {
-    --idColor: var(--yellow);
-}
-
-#id10770 {
-    --idColor: var(--red);
-}
-
+#id16,
+#id10767,
+#id36,
 #id53 {
     --idColor: var(--purple);
 }
 
-#id10752 {
+#id35,
+#id10752,
+#id27 {
     --idColor: var(--lightBlue);
 }
 
+#id80,
+#id10402,
 #id37 {
     --idColor: var(--darkBlue);
 }
 
-#id10759 {
-    --idColor: var(--yellow);
+#id99,
+#id9648 {
+    --idColor: var(--teal-dark-1);
 }
 
-#id10762 {
-    --idColor: var(--red);
-}
-
-#id10763 {
-    --idColor: var(--yellow);
-}
-
-#id10764 {
-    --idColor: var(--red);
+#id18,
+#id10749,
+#id10766 {
+    --idColor: var(--teal-medium-1);
 }
 
 #id10765 {
     --idColor: var(--teal-medium-2);
 }
 
-#id10766 {
-    --idColor: var(--teal-medium-1);
-}
-
-#id10767 {
-    --idColor: var(--purple);
-}
-
-#id10768 {
-    --idColor: var(--red);
-}
 /*=========================== DETAIL ==============================*/
 .movieDetail-container,
 .TVDetail-container {
@@ -720,6 +667,15 @@ footer {
 
 
 /* ======================= LIKES ========================= */
+.liked-container,
+.likedTV-container{
+    background-color: var(--gray-1);
+}
+.liked-container  h2,
+.likedTV-container h2{
+    color: white;
+
+}
 .liked-movieList .movie-container,
 .likedTV-List .program-container {
     display: inline-block;
@@ -753,6 +709,7 @@ footer {
     bottom: 0;
     width: 100%;
     height: 50px;
+/*     margin-top: 30px; */
 }
 
 /* ======================= EXTRAS ======================= */
