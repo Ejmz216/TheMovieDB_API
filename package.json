@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Ejmz216/TheMovieDB_API/issues"
   },
-  "homepage": "https://github.com/Ejmz216/TheMovieDB_API#readme"
+  "homepage": "https://ejmz216.github.io/TheMovieDB_API",
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
