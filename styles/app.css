@@ -291,8 +291,9 @@ footer {
 
 .header-arrow {
     font-weight: var(--font-weight-text2);
-    font-size: 36px;
+    font-size: 30px;
     margin-bottom: 16px;
+    margin-left: 15px;
     cursor: pointer;
     display: inline-block;
 }
@@ -931,4 +932,13 @@ footer {
         gap: 10px;
     }
 
+    .movieDetail-title,
+    .TVDetail-title {
+        font-size: 20px;
+    }
+
+    .movieDetail-description,
+    .TVDetail-description {
+        font-size: 13px;
+    }
 }
