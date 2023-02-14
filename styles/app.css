@@ -866,7 +866,7 @@ footer {
 @media screen and (max-width: 530px) {
     .imageContainer {
         width: 100%;
-        height: 244px !important;
+        height: 350px !important;
     }
 
     .imageContainer h1 {
