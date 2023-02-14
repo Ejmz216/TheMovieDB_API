@@ -102,7 +102,7 @@ function homePage() {
     getTrendingTVPreview();
     getCategoriesPreview();
     getCategoriesTVPreview();
-    
+
 }
 function categoriesPage() {
     console.log('Categories');
@@ -161,6 +161,7 @@ function movieDetailPage() {
     trendingTVPreviewSection.classList.add('inactive');
     genericTVSection.classList.add('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
+    likedTVContainer.classList.add('inactive');
     // ['#movie', '234567']
     const [_, movieId] = location.hash.split('=');
     getMovieById(movieId);
@@ -192,7 +193,7 @@ function searchPage() {
     genericTVSection.classList.add('inactive');
     TVDetailSection.classList.add('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
-
+    likedTVContainer.classList.add('inactive');
     // ['#search', 'platzi']
     const [_, query] = location.hash.split('=');
     getMoviesBySearch(query);
@@ -223,6 +224,7 @@ function trendsPage() {
     trendingTVPreviewSection.classList.add('inactive');
     genericTVSection.classList.add('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
+    likedTVContainer.classList.add('inactive');
 
     headerCategoryTitle.innerHTML = 'Trending Movies';
     getTrendingMovies();
@@ -249,13 +251,14 @@ function TVDetailPage() {
     genericSection.classList.add('inactive');
     movieDetailSection.classList.remove('inactive');
     likedContainer.classList.add('inactive');
-    
+
 
 
     trendingTVPreviewSection.classList.add('inactive');
     genericTVSection.classList.add('inactive');
     TVDetailSection.classList.add('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
+    likedTVContainer.classList.add('inactive');
     // ['#movie', '234567']
     const [_, programId] = location.hash.split('=');
     getProgramById(programId);
@@ -285,6 +288,7 @@ function trendsTVPage() {
     trendingTVPreviewSection.classList.add('inactive');
     genericTVSection.classList.remove('inactive');
     TVDetailSection.classList.add('inactive');
+    likedTVContainer.classList.add('inactive');
 
 
     headerCategoryTitle.innerHTML = 'Trending on TV';
@@ -317,7 +321,7 @@ function TVDetailPage() {
     genericTVSection.classList.add('inactive');
     TVDetailSection.classList.remove('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
-
+    likedTVContainer.classList.add('inactive');
 
     // ['#movie', '234567']
     const [_, programId] = location.hash.split('=');
@@ -348,7 +352,7 @@ function categoriesTVPage() {
     genericTVSection.classList.remove('inactive');
     TVDetailSection.classList.add('inactive');
     categoriesTVPreviewSection.classList.add('inactive');
-
+    likedTVContainer.classList.add('inactive');
     // ['#category', 'id-name']
     const [_, categoryTVData] = location.hash.split('=');
     const [categoryTVId, categoryTVName] = categoryTVData.split('-');
