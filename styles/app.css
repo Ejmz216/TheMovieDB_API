@@ -416,7 +416,7 @@ footer {
 
 
 .liked-movieList h1,
-.likedTV-List  h1 {
+.likedTV-List h1 {
     color: var(--light-2) !important;
     margin-bottom: 5px;
 }
@@ -497,22 +497,16 @@ footer {
     gap: 20px;
 }
 
-.genericList-container .movie-container {
-    display: inline-block;
-    width: 17.5%;
-}
-
-.genericList-container .movie-img {
-    width: 100%;
-}
-
+.genericList-container .movie-container,
 .genericTVList-container .program-container {
     display: inline-block;
     width: 17.5%;
 }
 
+.genericList-container .movie-img,
 .genericTVList-container .program-img {
     width: 100%;
+    min-height: 237px !important;
 }
 
 #id28 {
@@ -923,6 +917,18 @@ footer {
     .category-container,
     .categoryTV-container {
         padding: 10px;
+    }
+
+    .genericList-container .movie-container,
+    .genericTVList-container .program-container {
+        display: inline-block;
+        width: 45%;
+    }
+
+    .genericList-container,
+    .genericTVList-container {
+        padding: 0px 20px;
+        gap: 10px;
     }
 
 }
