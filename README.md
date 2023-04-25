@@ -1,12 +1,12 @@
-<h1 align="center">Consumo de API REST - The screen<img width="40" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></h1> 
+<h1 align="center">API REST Consumption - The screen<img width="40" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></h1> 
 
 <h3 align= "justify">
-En esta práctica se realiza el consumo de una API llamada “The Movie Data Base” (TMDB) con JavaScript.
-Buscando realizar una Single Page Application con hash navigation, así como también la creación de un buscador de películas. En este espacio se documentarán los commits realizados en el proyecto, donde se añaden funcionalidades o layouts nuevos hasta el estado más reciente. 
+This practice involves consuming an API called "The Movie Data Base" (TMDB) with JavaScript. The goal is to create a Single Page Application with hash navigation, as well as a movie search engine. In this space, the commits made to the project will be documented, where new functionalities or layouts are added until the most recent state. 
 </h3>
-Nota final* Este proyecto, se enfoca principalmente en el consumo de API REST/ optimización. Otras features como responsividad con mediaQuery para soporte en diferentes dispositivos y mejoramiento UI (Layout) se actualizará a futuro. Por ende, (y por ahora) la mejor manera de ver este proyecto es desde un PC. 
+Final Note* This project focuses primarily on consuming REST APIs/optimization. Other features such as responsiveness with mediaQuery for support on different devices and UI improvement (Layout) will be updated in the future. Therefore, (and for now) the best way to view this project is on a PC.
+The rest of this documentation is going to remain in panish for now
 <h3>
-👀 → Ver en Gh-Pages <a href="https://ejmz216.github.io/TheMovieDB_API/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
+👀 → View on Gh-Pages <a href="https://ejmz216.github.io/TheMovieDB_API/">The screen  <img width="20" alt="image" src="https://user-images.githubusercontent.com/67802793/197900321-b4dce53e-4cb6-4a7e-a249-756584c65162.png"></a>
 </br>
 </br>
 </br>
